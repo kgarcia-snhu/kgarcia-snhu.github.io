@@ -1,31 +1,175 @@
-# Welcome to kgarica-snhu's GitHub ePortfolio Page!
+# kgarcia-snhu.github.io
+-------------------------------------
 
-### The projects associated with this page are part of the Computer Science program from Southern New Hampshire University. The ePortfolio contains narrated code review, enhancements to completed work in three categories of (Software Design and Engineering, Algorithms and Data Structure, and Databases), justification narratives, and a professional self-assessment.
+## Southern New Hampshire University Software Engineering ePortfolio
+-------------------------------------
 
-### 👋 Hi, I’m @kgarcia-snhu
-#### My name is Keone Garcia, best pronounced as (Ke Own E). 
+### CS499 Computer Science Capstone
+My name is Keone, best pronounced as (Ke Own E). I continue to hold the Presidents List at Southern New Hampshire Univeristy. I’m a first-generation dual major, studying computer science and data analytics. Both of which have concentrations in software engineering and project management. The projects associated with this page are part of the Computer Science program from Southern New Hampshire University. The ePortfolio contains a narrated code review, enhancements to completed work in three categories of (Software Design and Engineering, Algorithms and Data Structure, and Databases), justification narratives, and a professional self-assessment. These artifacts have been developed previously in my years at SNHU and have been further developed to expand the complexity of software and functionality. From my Computer Science Capstone course, I have advanced previous work to showcase my abilities.  
+
+## Table of Content
+-------------------------------------
+1. Professional Self-Assessment
+2. Code Review
+3. Software Design and Engineering: Artifact 1 Thermostat Lab Enhancement
+4. Algorithms and Data Structure: Artifact 2 Encryption File Enhancement
+5. Databases: Artifact 3 
+
+### Professional Self-Assessment
+
+I’ve been in the computer science program since January of 2018, that puts me at 4 years to complete my degree. While in the program, I have learned that there are many applications for hardware and software to co-exist. When building a computer to meet the needs of a client; cost, performance, and limitations are considered to provide the best possible outcome. When developing code, security policies are used to ensure that code written relinquishes bugs, vulnerabilities, and data loss. Within the computer science program, having the ability to work with diverse programming languages along with comments in code are good practice, and provide avenues to reverse engineer software.
+
+As a first generation dual major working towards a BSCS and BSDA, I aim to work as a software engineer and a data analyst/scientist. Being new to coding, SNHU has provided me with my first steps to developing code. I plan to pursue an internship or a position in the industry that can continue to teach me industry standards so that I may implement each skill as I learn. Ultimately I would love to achieve the status of a data scientist, I hear many that pursue this position start as data analysts and learn code to develop algorithms that satisfy analytical reasoning for reports. Either way, I believe that both a software engineer and data analyst carry opposite duties as one creates data and the other collects and analyzes data. At some point in my career, like many of my professors, I would love to teach students based on my experience in the industry.
+
+### Code Review
+
+Provided is a link to my Code Review video where I address Existing Functionality, Code Analysis, and Enhancements planned.
+* Existing Functionality: A walk though of what exisiting code does and how it works.
+* Code Analysis: A review of code structure, commenting, efficiencies, and an explanation of findings.
+* Enhancements: A walk through of enhancements planned and an explanation of execution or limitations.
+
+### Software Design and Engineering: Artifact 1 Thermostat Lab Enhancement
+![CC3220S LaunchPad2](https://user-images.githubusercontent.com/79305154/151455474-1afa7d76-0b53-4522-8b75-0416d99671e1.JPG)
+I have chosen to select the artifact Thermostat Lab. The artifact originates from course CS350 Emerging Systems and uses Code Composer Studio with a Simple Link CC3220S Launchpad in C language. The goal of this artifact is to utilize components of the launchpad to simulate a working thermostat for an HVAC system. Indicating when the unit is active using an LED, while providing an output of sensor readings and setpoint parameters sent to be viewed on a mobile app.
+
+•	Identify any considerations to practical enhancements
+o	The enhancement plan includes updates to expand the complexity of software by incorporating comments where necessary, using proper syntax, and evaluating proper use of gpiointerrupt, timers, UART. 
+o	I plan to add or edit the LED output to enhance functionality. While improving code by finding bugs, checking for code clarity, consistency, design, features, and coding standard use. I also plan to create or update a ReadMe.txt file and update naming conventions for readability.
+
+I selected this artifact as I beleive the CC3220S Launchpad adds many possibilites to Software Design and Engineering. Specific to the Thermostat Lab project, many components required setup configuration to communicate with the board dependant on availability of pins, and resources. I enjoyed learning the basics of C language and realized by enhancing this project, I had a whole new experience when developing the changes to enhancement my ideas. I knew that the best course of action would be to take the program, its software and settings back to the begining of development. I worked from scratch to ensure each process to add components of the CC3220S Launchpad drivers were implemented in configuration and in code. To then add my enhancement changes to the gpiointerrupt LED functionality. The specific components of the artifact that showcase my abilities in software design and engineering are in the use of State Machines for use in activating an LED when either the heat or cool function is activated from the callback. I found that on the CC3200S board, there were limiations to the resources available in using LED outputs. I then determined in order to signal an active function of heat or cool wouuld be to have the Red LED blink for either function when active. Indicating when the unit is active using an LED, while providing an output of temperature sensor readings based on the setpoint parameters sent to a wireless thermostat and records measures to a database. For example:   
+
+/*
+========== State Machine's States ==========
+ */
+
+/* Increase or decrease setpoint from gpioButtonFxn0 or gpioButtonFxn1 buttons */
+enum BF_STATES {BF_SMStart, BF_SMWaitRise, BF_SMWaitFall} BF_STATE;
+
+/*
+ * BF_SMStart - Start
+ *  BF_SMWaitRise - Button Flag Wait Rise
+ *  BF_SMWaitFall - Button Flag Wait Fall
+ *  Button Flag callback if gpioButtonFxn0 or gpioButtonFxn1 are selected as 0 or 1
+ */
+
+void TickFct_ButtonFlag() {
+    switch(BF_STATE) { // Transitions
+        case BF_SMStart:
+            /* Initialize buttons to 0 */
+            Button0_Flag = 0; // Initialize outputs
+            Button1_Flag = 0; // Initialize outputs
+            BF_STATE = BF_SMWaitRise;
+            break;
+        case BF_SMWaitRise:
+            // Wait for button flag 0(Right) or 1(Left) to be selected
+            if (Button0_Flag || Button1_Flag) {
+                BF_STATE = BF_SMWaitFall;
+            }
+            break;
+        case BF_SMWaitFall:
+            // If no button flag is raised go to BF_SMWaitRiseLow
+            if (!(Button0_Flag || Button1_Flag)){
+                BF_STATE = BF_SMWaitRise;
+            }
+            break;
+        default:
+            BF_STATE = BF_SMStart; // Indicates initial call
+            break;
+    }
+
+    switch(BF_STATE) { // State actions
+        case BF_SMStart:
+            break;
+        case BF_SMWaitRise:
+            break;
+        case BF_SMWaitFall:
+            // Update setpoint temperature value
+            if (Button0_Flag) {
+                setpoint -= 1;       // Decrease setpoint by 1° C // <30,25,1,0339> <temperature, setpoint, heat, seconds>
+                Button0_Flag = 0;    // Update Button0_Flag
+            }
+            if (Button1_Flag) {
+                setpoint += 1;       // Increase setpoint by 1° C // <30,32,0,0339> <temperature, setpoint, heat, seconds>
+                Button1_Flag = 0;    // Update Button1_Flag
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+/*
+========== State Machine's States Continued ==========
+ */
+
+/* Temperature heat or cool indicator activates LED red ON or OFF indicating heater is on or off */
+enum TL_STATES {TL_SMStart, TL_SMOff, TL_SMOn} TL_STATE;
+
+/*
+ *  TL_SMStart - Start
+ *  TL_SMOff - Temperature Light Off (Heater or Cooling Off)
+ *  TL_SMOn - Temperature Light On (Heater or Cooling On)
+ */
+
+void TickFct_TmpLED() {
+    switch(TL_STATE) { // Transitions
+        case TL_SMStart:
+            heat = 0;
+            cool = 0;
+            TL_STATE = TL_SMOff; // default Temperature Light is off
+            break;
+        case TL_SMOff:
+            /* If temperature is less than setpoint proceed to STATE TL_On */
+            if (temperature < setpoint) {
+                TL_STATE = TL_SMOn;
+                GPIO_write(CONFIG_GPIO_LED_0, CONFIG_GPIO_LED_ON);
+                heat = 1; // Temperature sensor heat is on (Heater activates) LED red on
+            }
+            /* If temperature is greater than setpoint proceed to STATE TL_On */
+            if (temperature > setpoint) {
+                TL_STATE = TL_SMOn;
+                GPIO_write(CONFIG_GPIO_LED_0, CONFIG_GPIO_LED_ON);
+                cool = 1; // Temperature sensor cooling is off (A/C is turned off) LED red on
+            }
+            break;
+        case TL_SMOn:
+            /* If temperature is greater than setpoint proceed to STATE TL_Off */
+            if (!(temperature < setpoint)){
+                TL_STATE = TL_SMOff;
+                GPIO_write(CONFIG_GPIO_LED_0, CONFIG_GPIO_LED_OFF);
+                heat = 0; // Temperature sensor heat is off (Heater is turned off) LED red off
+            }
+            /* If temperature is greater than setpoint proceed to STATE TL_Off */
+            if (!(temperature > setpoint)){
+                TL_STATE = TL_SMOff;
+                GPIO_write(CONFIG_GPIO_LED_0, CONFIG_GPIO_LED_OFF);
+                cool = 0; // Temperature sensor cooling is on (A/C activates) LED red off
+            }
+            break;
+        default:
+            TL_STATE = TL_SMStart; // Initialize outputs
+            break;
+    }
+
+    switch(TL_STATE) { // State actions
+        case TL_SMStart: // Start
+            break;
+        case TL_SMOff: // Temperature Light Off
+            break;
+        case TL_SMOn: // Temperature Light On
+            break;
+        default:    // default
+            break;
+    }
+}
+
+Reflecting on the process of enhancing and modifying this artifact, I gained insight on how to focus on key elements in configuration, component limitations, and code structure. One specific detail that I used for the state machine was to keep it simple. By developing pseudo code, I was able to plan out my changes and implement in code how the program would perform with the CC3220S Launchpad. I have confirmed that pseudocode developed aligns to the description of steps taken to structure and deploy programmed outcomes. I've added comments where necessary within codes to adhere to best practices. I've ensured that there are no errors in logic, using correct loops, branches, and nesting. That loops and cases include defaults to protect the program functionality. I using best practices formatting and use of proper spacing or tabs, white space, line breaks, curly braces, and brackets have been checked. Naming conventions have been reviewed for readability, and tests have been performed. Although I would have perferred that the cool and heat functions had thier own deticated LED output of Red, Green or Yellow. By maintaining access to the drivers of UART, I2C, the porject is able to read the temperature output and record the temperature, setpoint, heat, cool, and seconds parameters. As a result, I would have a Thermostat Application that would adhere to coding standards, best practices, and illustrate the programming skills that have matured through my education at Southern New Hampshire University as a Computer Science, Software Engineering student.
 
 
-### 🌱 I’m currently learning ...
-#### I’m a first-generation dual major, studying a bachelors of computer science and data analytics. Both of which have concentrations in software engineering and project management. I’ve been in the computer science program since January of 2018 and am completing my 4th year. While in the computer science program, I have learned that there are many applications for hardware and software to co-exist. When building a computer to meet the needs of a client cost, performance, and limitations are considered to provide the best possible recommendations. When developing code, security policies are used to ensure that code written relinquishes bugs, vulnerabilities, and data loss. I have also learned that having the ability to work with diverse programming languages along with comments in code are good practice, and provide avenues to reverse engineer software.
+### Algorithms and Data Structure: Artifact 2 Encryption File Enhancement
 
 
-### 👀 I’m interested in ...
-#### I aim to work as a software engineer and a data analyst/scientist. Being new to coding, SNHU has provided me with my first steps to developing code. I plan to pursue an internship or a position in the industry that continues to teach me industry standards so that I may implement each skill as I learn. Ultimately I would love to achieve the status of a data scientist, I hear many that pursue this position start as data analysts and learn code to develop algorithms that satisfy analytical reasoning for reports. I believe that both a software engineer and data analyst carry duties necessary to computer science as one creates data and the other collects and analyzes data. At some point in my career, I would love to teach students based on my experience in the industry.
 
 
-### 💞️ I’m looking to collaborate on ...
-#### - Software Design and Engineering
-#### - Algorithms and Data Structures
-#### - Databases
-#### - Graphics and Design
-#### - Data Analysis
-#### - Data Mining
-#### - Technology
-#### - C/C++, Python, Java, R, Swift, PHP, Kotlin/Android Stuio, Unified Modeling Language(UML), and Matlab programming languages
-#### - Pseudocode, SCRUM methodology, CRUD, Project Management, Agile Software Development, Software Security, and Embedded Systems
-#### - Micrososft Windows, Linux, Apple macOS, Google Andriod OS, and Apple iOS operating systems
+### Databases: Artifact 3 
 
-
-### 📫 How to reach me ...
-#### keone.garcia@snhu.edu
