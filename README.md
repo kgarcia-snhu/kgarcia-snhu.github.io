@@ -39,11 +39,12 @@ I have chosen to select the artifact Thermostat Lab. The artifact originates fro
 I selected this artifact as I beleive the CC3220S Launchpad adds many possibilites to Software Design and Engineering. Specific to the Thermostat Lab project, many components required setup configuration to communicate with the board dependant on availability of pins and resources. I enjoyed learning the basics of C language and realized by enhancing this project. I had a whole new experience when developing the changes to enhance my ideas. I knew that the best course of action would be to start at the very beginning regarding the program, its software and settings. I worked from scratch to ensure each process had proper components of the CC3220S Launchpad drivers implemented in configuration and in code. I then started to add my enhancement changes to the gpiointerrupt LED functionality. The specific components of the artifact that showcase my abilities in software design and engineering are in the use of State Machines for use in activating an LED when either the heat or cool function is activated from the callback. I found that on the CC3200S board, there were limiations to the resources available in using LED outputs. I then determined in order to signal an active function of heat or cool would be to have the Red LED blink for either function when active. Indicating when the unit is active using an LED, while providing an output of temperature sensor readings based on the setpoint parameters sent to a wireless thermostat , recording measures to a database. 
 
 For example:
-State Machine
 ---------------------------------------------------------------------------
+State Machine
 ![State Machines](https://user-images.githubusercontent.com/79305154/151462751-1f7665c2-e387-4661-baa1-28d8dc70c4bd.png)
+
+---------------------------------------------------------------------------
 Pseudo Code
----------------------------------------------------------------------------  
 ![State Machines Diagam](https://user-images.githubusercontent.com/79305154/151463072-945c60b9-7c81-4049-b181-baebec582d92.png)
 
 Reflecting on the process of enhancing and modifying this artifact, I gained insight on how to focus on key elements in configuration, component limitations, and code structure. One specific detail that I used for the state machine was to keep it simple. By developing pseudo code, I was able to plan out my changes and implement in code how the program would perform with the CC3220S Launchpad. 
