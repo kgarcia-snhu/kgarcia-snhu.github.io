@@ -58,7 +58,7 @@ Although I would have perferred that the cool and heat functions had thier own d
 
 ### Algorithms and Data Structure: Artifact 2 Encryption File Enhancement
 --------------------------------------------------------------------------------
-https://github.com/kgarcia-snhu/kgarcia-snhu.github.io/blob/main/Artifact%202_Encryption%20File/Photos/free-encryption.jpg?raw=true
+![free-encryption](https://user-images.githubusercontent.com/79305154/151493285-aba0dc07-24e5-49bc-b772-884ad848b286.jpg)
 --------------------------------------------------------------------------------
 
 I have chosen to select the artifact Encrypted Data. The artifact originates from course CS405 Secure Coding and uses Microsoft Visual Studio in C++ language. The goal of this artifact is to showcase a secure transfer of data from one location to another. Mitigating errors in accessing an encrypted file and outputting the contents into a new file using an encryption key. 
@@ -71,6 +71,9 @@ I selected this artifact as I beleive
 
 For example:
 ---------------------------------------------------------------------------
+![Picture1](https://user-images.githubusercontent.com/79305154/151493319-6e73fdc0-0452-4748-9ab5-55f5e382c8d3.png)
+![Picture3](https://user-images.githubusercontent.com/79305154/151493329-4ecd01f5-e900-4f1c-a000-9be8a86430e9.png)
+![Picture2](https://user-images.githubusercontent.com/79305154/151493335-48b94d4a-a440-4be8-9f92-07287b47f1fc.png)
 
 Reflecting on the process of enhancing and modifying this artifact, 
 
