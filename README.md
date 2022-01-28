@@ -75,6 +75,11 @@ For example:
 ![Picture3](https://user-images.githubusercontent.com/79305154/151493329-4ecd01f5-e900-4f1c-a000-9be8a86430e9.png)
 ![Picture2](https://user-images.githubusercontent.com/79305154/151493335-48b94d4a-a440-4be8-9f92-07287b47f1fc.png)
 
+---------------------------------------------------------------------------
+## Pseudo Code:
+![Encryption_File Pseudo Code](https://user-images.githubusercontent.com/79305154/151493413-03c5d27c-959d-4412-8102-90617adf980a.png)
+
+
 Reflecting on the process of enhancing and modifying this artifact, 
 
 This artifact demonstrates an ability to develop a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources. 
