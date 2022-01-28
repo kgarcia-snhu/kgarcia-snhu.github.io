@@ -357,11 +357,11 @@ void TickFct_ButtonFlag() {
         case BF_SMWaitFall:
             // Update setpoint temperature value
             if (Button0_Flag) {
-                setpoint -= 1;       // Decrease setpoint by 1° C // <30,25,1,0339> <temperature, setpoint, heat, seconds>
+                setpoint -= 1;       // Decrease setpoint by 1° C // <30,25,1,0339> <temperature, setpoint, heat, cool, seconds>
                 Button0_Flag = 0;    // Update Button0_Flag
             }
             if (Button1_Flag) {
-                setpoint += 1;       // Increase setpoint by 1° C // <30,32,0,0339> <temperature, setpoint, heat, seconds>
+                setpoint += 1;       // Increase setpoint by 1° C // <30,32,0,0339> <temperature, setpoint, heat, cool, seconds>
                 Button1_Flag = 0;    // Update Button1_Flag
             }
             break;
