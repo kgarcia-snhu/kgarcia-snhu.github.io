@@ -22,6 +22,8 @@ As a first generation dual major working towards a BSCS and BSDA, I aim to work 
 
 Provided is a link to my Code Review video where I address Existing Functionality, Code Analysis, and Enhancements planned.
 https://www.screencast.com/t/u37vPUqJPSo
+link to script - [Code Review Script.pdf](https://github.com/kgarcia-snhu/kgarcia-snhu.github.io/files/7956249/Code.Review.Script.pdf)
+
 * Existing Functionality: A walk though of what exisiting code does and how it works.
 * Code Analysis: A review of code structure, commenting, efficiencies, and an explanation of findings.
 * Enhancements: A walk through of enhancements planned and an explanation of execution or limitations.
