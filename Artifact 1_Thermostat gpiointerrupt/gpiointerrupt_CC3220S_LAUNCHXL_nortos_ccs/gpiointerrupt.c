@@ -4,35 +4,35 @@
  * date : 01/21/2022
  *
  *
- ** Project Requirements **
- ** Artifact One is the Thermostat Lab
- ** The artifact originates from course CS350 Emerging Systems and uses Code Composer Studio
- ** with a Simple Link CC3220S Launchpad in C language.
- ** The goal of this artifact is to utilize components of the Launchpad to simulate a working thermostat
- ** for an HVAC system. Indicating when the unit is active using an LED, while providing an output of
- ** temperature sensor readings based on setpoint parameters sent to a wireless thermostat and records measures to a database.
- ** Illustrated using the CC3220S Launchpad drivers, components and functions
+ * -- Project Requirements --
+ * Artifact One is the Thermostat Lab
+ * The artifact originates from course CS350 Emerging Systems and uses Code Composer Studio
+ * with a Simple Link CC3220S Launchpad in C language.
+ * The goal of this artifact is to utilize components of the Launchpad to simulate a working thermostat
+ * for an HVAC system. Indicating when the unit is active using an LED, while providing an output of
+ * temperature sensor readings based on setpoint parameters sent to a wireless thermostat and records measures to a database.
+ * Illustrated using the CC3220S Launchpad drivers, components and functions
  *
  *
- ## Required Changes ##
- ##
- ## Update Pseudocode with changes to functionality.
- ## Change LED Output suited for both the Heat and Cool function - The red LED is the only option available and is set to blink.
- ## Update Loops, branches, nesting, and use proper logic.
- ## Update Cases, use defaults.
- ## Ensure use of formating, date, logic, spacing, tabs, line breaks, curly braces, and brackets.
- ## Consider whitespace, remove unnecessary spacing.
- ## Ensure naming conventions of fields/constants/variables/parameters/classes/libraries clear and meaningful.
- ## Remove redundant variables - CONFIG_GPIO_LED_1, no longer in use as I2C driver uses the same pins for CONFIG_GPIO_LED_1.
- ## Remove excess comments - Over commenting, while useful can lead to distractions or large files.
- ## Add commenting to functionality - Provide necessary comments to specific functions required .
- ## Add parameters for cooling system displayed from terminal - In UART, add parameters to invoke cooling when temp is greater than setpoint.
- ## Add required drivers - Add the Timer Driver for tick counts, Add the I2C Driver for temperature sensor measures.
- ## Edit existing drivers - Update changes to existing drivers based on parameters set.
- ## Remove non-functional drivers - Remove non-functional drivers, as some share the same pins and cause the project to fail.
- ## Ensure functions have the variables that support them declared near by - Relocate declarations above where the function is called.
- ## Ensure Project Requirements are fulfilled and improvments support quality, efficiency, and security.
- ## Create ReadMe file and include project outcome and steps.
+ * -- Required Changes --
+ *
+ * Update Pseudocode with changes to functionality.
+ * Change LED Output suited for both the Heat and Cool function - The red LED is the only option available and is set to blink.
+ * Update Loops, branches, nesting, and use proper logic.
+ * Update Cases, use defaults.
+ * Ensure use of formating, date, logic, spacing, tabs, line breaks, curly braces, and brackets.
+ * Consider whitespace, remove unnecessary spacing.
+ * Ensure naming conventions of fields/constants/variables/parameters/classes/libraries clear and meaningful.
+ * Remove redundant variables - CONFIG_GPIO_LED_1, no longer in use as I2C driver uses the same pins for CONFIG_GPIO_LED_1.
+ * Remove excess comments - Over commenting, while useful can lead to distractions or large files.
+ * Add commenting to functionality - Provide necessary comments to specific functions required .
+ * Add parameters for cooling system displayed from terminal - In UART, add parameters to invoke cooling when temp is greater than setpoint.
+ * Add required drivers - Add the Timer Driver for tick counts, Add the I2C Driver for temperature sensor measures.
+ * Edit existing drivers - Update changes to existing drivers based on parameters set.
+ * Remove non-functional drivers - Remove non-functional drivers, as some share the same pins and cause the project to fail.
+ * Ensure functions have the variables that support them declared near by - Relocate declarations above where the function is called.
+ * Ensure Project Requirements are fulfilled and improvments support quality, efficiency, and security.
+ * Create ReadMe file and include project outcome and steps.
  *
  *
  * Copyright (c) 2015-2020, Texas Instruments Incorporated
@@ -357,11 +357,11 @@ void TickFct_ButtonFlag() {
         case BF_SMWaitFall:
             // Update setpoint temperature value
             if (Button0_Flag) {
-                setpoint -= 1;       // Decrease setpoint by 1° C // <30,25,1,0339> <temperature, setpoint, heat, seconds>
+                setpoint -= 1;       // Decrease setpoint by 1Â° C // <30,25,1,0339> <temperature, setpoint, heat, seconds>
                 Button0_Flag = 0;    // Update Button0_Flag
             }
             if (Button1_Flag) {
-                setpoint += 1;       // Increase setpoint by 1° C // <30,32,0,0339> <temperature, setpoint, heat, seconds>
+                setpoint += 1;       // Increase setpoint by 1Â° C // <30,32,0,0339> <temperature, setpoint, heat, seconds>
                 Button1_Flag = 0;    // Update Button1_Flag
             }
             break;
@@ -516,7 +516,7 @@ void *mainThread(void *arg0)
         * The output to the server (via UART) should be formatted as <AA,BB,S,CCCC>. This can be broken down as follows:
         * AA = ASCII decimal value of room temperature (00 - 99) degrees Celsius, Room temperature is (24C)
         * BB = ASCII decimal value of set-point temperature (00-99) degrees Celsius, Set temperature from (-99C to 99C)
-        * S = ‘0’ if heat is off, ‘1’ if heat is on
+        * S = Â‘0Â’ if heat is off, Â‘1Â’ if heat is on
         * CCCC = decimal count of seconds since board has been reset, Resetting the board returns to Echoing characters
         * <%02d,%02d,%d,%04d> = temperature, set-point, heat, seconds
         */
