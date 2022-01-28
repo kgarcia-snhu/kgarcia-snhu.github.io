@@ -10,7 +10,7 @@ My name is Keone, best pronounced as (Ke Own E). I continue to hold the Presiden
 2. Code Review
 3. Software Design and Engineering: Artifact 1 Thermostat Lab Enhancement
 4. Algorithms and Data Structure: Artifact 2 Encryption File Enhancement
-5. Databases: Artifact 3 
+5. Databases: Artifact 3 RMA_Orders Database Enhancement 
 
 ### Professional Self-Assessment
 
@@ -58,7 +58,26 @@ Although I would have perferred that the cool and heat functions had thier own d
 
 ### Algorithms and Data Structure: Artifact 2 Encryption File Enhancement
 
+I have chosen to select the artifact Encrypted Data. The artifact originates from course CS405 Secure Coding and uses Microsoft Visual Studio in C++ language. The goal of this artifact is to showcase a secure transfer of data from one location to another. Mitigating errors in accessing an encrypted file and outputting the contents into a new file using an encryption key. 
 
+* The enhancement plan includes updates to improve the efficiency of the artifact by incorporating comments where necessary, using proper syntax, and evaluating the use of an input data file, encryption key, decryption output, assertion, and debugging. 
+* I plan to add or edit the archive and find areas to enhance functionality of the project. While improving code by finding bugs, checking for code clarity, consistency, design, features, tests, and coding standard use. I also plan to create a ReadMe.txt file and update naming conventions for readability.
+
+
+I selected this artifact as I beleive 
+
+For example:
+---------------------------------------------------------------------------
+
+Reflecting on the process of enhancing and modifying this artifact, 
+
+This artifact demonstrates an ability to develop a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources. 
+
+This artifact demonstrates an ability to design and evaluate computing solutions that solve a given problem using algorithmic principles and computer science practices and standards appropriate to its solution, while managing the trade-offs involved in design choices.
+
+This artifact demonstrates an ability to demonstrate an ability to use well-founded and innovative techniques, skills, and tools in computing practices for the purpose of implementing computer solutions that deliver value and accomplish industry-specific goals.
+
+As a result, I have an Encryption_File Application that adheres to coding standards, best practices, and illustrates the programming skills that have matured through my education at Southern New Hampshire University as a Computer Science, Software Engineering student. 
 
 
 ### Databases: Artifact 3 
