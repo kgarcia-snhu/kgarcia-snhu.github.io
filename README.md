@@ -40,11 +40,11 @@ I selected this artifact as I beleive the CC3220S Launchpad adds many possibilit
 
 For example:
 ---------------------------------------------------------------------------
-State Machine
+## State Machine:
 ![State Machines](https://user-images.githubusercontent.com/79305154/151462751-1f7665c2-e387-4661-baa1-28d8dc70c4bd.png)
 
 ---------------------------------------------------------------------------
-Pseudo Code
+## Pseudo Code:
 ![State Machines Diagam](https://user-images.githubusercontent.com/79305154/151463072-945c60b9-7c81-4049-b181-baebec582d92.png)
 
 Reflecting on the process of enhancing and modifying this artifact, I gained insight on how to focus on key elements in configuration, component limitations, and code structure. One specific detail that I used for the state machine was to keep it simple. By developing pseudo code, I was able to plan out my changes and implement in code how the program would perform with the CC3220S Launchpad. 
