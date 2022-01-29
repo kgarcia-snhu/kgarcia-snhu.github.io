@@ -84,12 +84,47 @@ For example:
 ## Pseudo Code:
 ![Encryption_File Pseudo Code](https://user-images.githubusercontent.com/79305154/151493413-03c5d27c-959d-4412-8102-90617adf980a.png)
 
+Reflecting on the process of enhancing and modifying this artifact, I realize that without the resources referenced in this program, the necessary conversion to transform the encrypted file into a decrypted format would be impossible. I now understand the value of algorithms that use such complex functions like in cryptocurrencies. By focusing on key elements of the XOR encryption key, the functionality and components allowed the encryption to use a key at each value. By following sources to read the inputdatafile.txt, the file was embedded into the project and the code written saved a new file for encryption and decryption to take place.
 
-Reflecting on the process of enhancing and modifying this artifact, 
+This skills for this artifact demonstrate an ability to develop a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources. Initially, I had issues with the program accessing the inputdatafile.txt file. When trying to read the file Microsoft Visual Studio prompted an error that the file was not found. After researching online, I found that in order to access external files, MVS requires the file to be embedded within the source folder location. By doing this, I was able to find a solution to address potential design flaws in software, but wonder how other projects tackle issues of the same matter for encryption? By embedding the file, the encrypt_decrypt function key was used at each value to output values saved. I routinely placed sections in code to output the values of strings to determine what is being written as a check and balance. 
 
-This artifact demonstrates an ability to develop a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources. 
+For example: 
+/* use cout to test file output if needed */
+//std::cout << file_text << std::endl; // test file_text output   
+//std::cout << filename << std::endl;  // test filename output
 
-This artifact demonstrates an ability to design and evaluate computing solutions that solve a given problem using algorithmic principles and computer science practices and standards appropriate to its solution, while managing the trade-offs involved in design choices.
+std::string encrypt_decrypt(const std::string& source, const std::string& key)
+{
+	// get lengths now instead of calling the function every time.
+	// this would have most likely been in-lined by the compiler, but design for performance.
+	const auto key_length = key.length();
+	const auto source_length = source.length();
+
+	// assert that our input data is good
+	assert(key_length > 0);		// verify the key_length is greater than 0
+	assert(source_length > 0);	// verify the source_length is greater than 0
+
+	std::string output = source;	// output string source
+
+	// loop through the source string char by char
+	for (size_t i = 0; i < source_length; ++i)
+	{ // TODO: Need to change the next line from output[i] = source[i]
+	  // transform each character based on an xor of the key modded constrained to key length using a mod
+		output[i] = source[i] ^ key[i % key_length]; // https://www.programmingalgorithms.com/algorithm/xor-encryption/cpp/
+	}
+	// our output length must equal our source length
+	assert(output.length() == source_length);
+	//std::cout << output.length() << std::endl;	//use the cout function to show the output and source if needed
+	//std::cout << source_length << std::endl;
+
+	// return the transformed string
+	return output;		// used to return output
+}
+
+Using assert within the program helped to verify variables and the arguments used to determine its output. By listing the output of variables using cout and using assertions, I was able to find and eradicate security vulnerabilities or bugs within the program. I feel that because this program is more of an entry level program to illustrate the use of an encryption key. The ability to define and ensure that all data is explicitly validated has been achieved as the file accessed is embedded within the program. I would believe that software developed to address security protection of file transfers would be far more aggressive in protecting the contents of the file, changing the key regularly so that no one could access the information if they had one part of the decryption process. Lastly, I believe that my experience in developing the Encryption_File project allowed me to see how software accesses information and by using a security mindset, secures the information using an encryption to be accessed only when a decryption key is accessible.
+
+This artifact demonstrates an ability to design and evaluate computing solutions that solve a given problem using algorithmic principles and computer science practices and standards appropriate to its solution, while managing the trade-offs involved in design choices. I have confirmed that pseudocode developed aligns to the description of steps taken to structure and deploy programmed outcomes. Using logic and algorithms to solve conversions of text from encrypted to decrypted format. I have confirmed that the encrypt_decrypt functions work correctly with the program, outputting new files for each. The approach taken to solve the functions for both encryption and decryption output were first mapped in pseudo code to segment each within the program. I then determined the functions to establish within the XOR key, the inputdatafile.txt was imported into the program and set to read the output, generating a new file for encryption and decryption to be saved. Best practices have been enforced, using proper spacing or tabs, white space, line breaks, curly braces, and brackets that have been checked. Naming conventions have been reviewed for readability, testing has been performed, using assertions and line outputs prior to submitting deliverables.
+
 
 This artifact demonstrates an ability to demonstrate an ability to use well-founded and innovative techniques, skills, and tools in computing practices for the purpose of implementing computer solutions that deliver value and accomplish industry-specific goals.
 
