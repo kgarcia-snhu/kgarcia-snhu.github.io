@@ -16,17 +16,17 @@
  *
  * -- Required Changes --
  *
- * Update Pseudo code descriptions and layout.
- * Include assert functions to verify input and output
- * Update Loops, branches, nesting, and use proper logic.
- * Ensure use of formating, date, logic, spacing, tabs, line breaks, curly braces, and brackets.
- * Consider whitespace, remove unnecessary spacing.
- * Ensure naming conventions of fields/constants/variables/parameters/classes/libraries clear and meaningful.
- * Remove excess comments - Over commenting, while useful can lead to distractions or large files.
- * Add commenting to functionality - Provide necessary comments to specific functions required .
- * Ensure functions have the variables that support them declared near by - Relocate declarations above where the function is called.
- * Ensure Project Requirements are fulfilled and improvements support quality, efficiency, and security.
- * Create ReadMe file and include project outcome and steps.
+ 1. Pseudocode descriptions and layout structure have been updated to align with the program functionality.
+ 2. Verified the inclusion of assert functions to verify input and output
+ 3. Verified loops, branches, nesting, and logic to support program functionality.
+ 4. Verified formatting, date, spacing, tabs, line breaks, curly braces, and brackets.
+ 5. Reviewed considerations of whitespace, removing unnecessary spacing.
+ 6. Ensured naming conventions of fields/constants/variables/parameters/classes/libraries clear and meaningful.
+ 7. Removed excess commenting - Over commenting, while useful can lead to distractions or large files.
+ 8. Added commenting to functionality - Provide necessary comments to specific functions required.
+ 9. Ensure Project Requirements are fulfilled and improvements support quality, efficiency, and security.
+ 10. Create ReadMe file and include project outcome and steps. This is a project where I had to create a README file as one did not exist.
+ *
  *
 */
 
@@ -38,7 +38,7 @@
 #include <ctime>	// Convert time_t value to string
 
 /*
-*  ======== Implement XOR-based encryption ========
+*  ======== Encrypt or Decrypt key ========
 */
 
 /* encrypt or decrypt a source string using the provided key
@@ -59,6 +59,7 @@ std::string encrypt_decrypt(const std::string& source, const std::string& key)
 
 	std::string output = source;	// output string source
 
+	/*========= xor based encryption =========*/
 	// loop through the source string char by char
 	for (size_t i = 0; i < source_length; ++i)
 	{ // TODO: Need to change the next line from output[i] = source[i]
@@ -73,6 +74,8 @@ std::string encrypt_decrypt(const std::string& source, const std::string& key)
 	// return the transformed string
 	return output;		// used to return output
 }
+
+/*========== Read data from file ==========*/
 
 std::string read_file(const std::string& filename)
 {
@@ -97,10 +100,7 @@ std::string read_file(const std::string& filename)
 	return file_text;	// return file
 }
 
-/*
-============ Implement loading data from text file into string ==================
-*/
-
+/*========== Get Student Name ==========*/
 std::string get_student_name(const std::string& string_data)
 {
 	std::string student_name;
@@ -115,15 +115,11 @@ std::string get_student_name(const std::string& string_data)
 	return student_name;
 }
 
-/*
-============== Save string to text file ===============
-*/
-
+/*========== Save string to file ==========*/
 void save_data_file(const std::string& filename, const std::string& student_name, const std::string& key, const std::string& data)
 {
 	//  TODO: implement file saving
 	std::ofstream MyWriteFile(filename); // file format from https://www.w3schools.com/cpp/cpp_files.asp
-	//std::myReadFile.open(filename);
 
 	MyWriteFile << student_name; // Line 1: student name (Firstname, Lastname)
 	MyWriteFile << __TIMESTAMP__; // Line 2: timestamp (yyyy-mm-dd)
@@ -132,19 +128,18 @@ void save_data_file(const std::string& filename, const std::string& student_name
 	MyWriteFile.close(); // close()
 }
 
+/*========== Test encryption decryption ===========*/
 int main()
 {
-	std::cout << "Encryption Decryption - Keone Garcia 01/26/2022 Capstone!" << std::endl;
+	std::cout << "Encryption Decryption Test!" << std::endl;
 
 	// input file format
 	// Line 1: <students name>
 	// Line 2: <Lorem Ipsum Generator website used> https://pirateipsum.me/ (could be https://www.lipsum.com/ or one of https://www.shopify.com/partners/blog/79940998-15-funny-lorem-ipsum-generators-to-shake-up-your-design-mockups)
-
 	// Lines 3+: <lorem ipsum generated with 3 paragraphs>
-
-	// Fire in the hole bowsprit Jack Tar gally holystone sloop grog heave to grapple Sea Legs. Gally hearties case shot crimp spirits pillage galleon chase guns skysail yo-ho-ho. Jury mast coxswain measured fer yer chains man-of-war Privateer yardarm aft handsomely Jolly Roger mutiny.
-	// Hulk coffer doubloon Shiver me timbers long clothes skysail Nelsons folly reef sails Jack Tar Davy Jones' Locker. Splice the main brace ye fathom me bilge water walk the plank bowsprit gun Blimey wench. Parrel Gold Road clap of thunder Shiver me timbers hempen halter yardarm grapple wench bilged on her anchor American Main.
-	// Brigantine coxswain interloper jolly boat heave down cutlass crow's nest wherry dance the hempen jig spirits. Interloper Sea Legs plunder shrouds knave sloop run a shot across the bow Jack Ketch mutiny barkadeer. Heave to gun matey Arr draft jolly boat marooned Cat o'nine tails topsail Blimey.
+	//  Fire in the hole bowsprit Jack Tar gally holystone sloop grog heave to grapple Sea Legs. Gally hearties case shot crimp spirits pillage galleon chase guns skysail yo-ho-ho. Jury mast coxswain measured fer yer chains man-of-war Privateer yardarm aft handsomely Jolly Roger mutiny.
+	//  Hulk coffer doubloon Shiver me timbers long clothes skysail Nelsons folly reef sails Jack Tar Davy Jones' Locker. Splice the main brace ye fathom me bilge water walk the plank bowsprit gun Blimey wench. Parrel Gold Road clap of thunder Shiver me timbers hempen halter yardarm grapple wench bilged on her anchor American Main.
+	//  Brigantine coxswain interloper jolly boat heave down cutlass crow's nest wherry dance the hempen jig spirits. Interloper Sea Legs plunder shrouds knave sloop run a shot across the bow Jack Ketch mutiny barkadeer. Heave to gun matey Arr draft jolly boat marooned Cat o'nine tails topsail Blimey.
 
 	const std::string file_name = "inputdatafile.txt";
 	const std::string encrypted_file_name = "encrypteddatafile.txt";
@@ -171,5 +166,7 @@ int main()
 	save_data_file(decrypted_file_name, student_name, key, decrypted_string);
 
 	std::cout << "Read File: " << file_name << " - Encrypted To: " << encrypted_file_name << " - Decrypted To: " << decrypted_file_name << std::endl;
+
+	// program creates accesses an input file, and creates an encrypted file, decrypted file, source code file, and key used
 }
 
