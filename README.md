@@ -24,8 +24,8 @@ Red Ventures, C. (2022, January 12). Compare top careers in computer science. Ge
 
 ## Code Review
 Provided is a link to my Code Review video where I address Existing Functionality, Code Analysis, and Enhancements planned.
-link to code review video - [Code Review Video](https://www.screencast.com/t/u37vPUqJPSo)
-link to script - [Code Review Script.pdf](https://github.com/kgarcia-snhu/kgarcia-snhu.github.io/files/7956249/Code.Review.Script.pdf)
+- link to code review video - [Code Review Video](https://www.screencast.com/t/u37vPUqJPSo)
+- link to script - [Code Review Script.pdf](https://github.com/kgarcia-snhu/kgarcia-snhu.github.io/files/7956249/Code.Review.Script.pdf)
 
 * Existing Functionality: A walk through of what existing code does and how it works.
 * Code Analysis: A review of code structure, commenting, efficiencies, and an explanation of findings.
