@@ -27,9 +27,9 @@ Provided is a link to my Code Review video where I address Existing Functionalit
 - link to code review video - [Code Review Video](https://www.screencast.com/t/u37vPUqJPSo)
 - link to script - [Code Review Script.pdf](https://github.com/kgarcia-snhu/kgarcia-snhu.github.io/files/7956249/Code.Review.Script.pdf)
 
-* Existing Functionality: A walk through of what existing code does and how it works.
-* Code Analysis: A review of code structure, commenting, efficiencies, and an explanation of findings.
-* Enhancements: A walk through of enhancements planned and an explanation of execution or limitations.
+ 1. Existing Functionality: A walk through of what existing code does and how it works.
+ 2. Code Analysis: A review of code structure, commenting, efficiencies, and an explanation of findings.
+ 3. Enhancements: A walk through of enhancements planned and an explanation of execution or limitations.
 
 ## Software Design and Engineering: Artifact 1 Thermostat Lab Enhancement
 ![CC3220S LaunchPad2](https://user-images.githubusercontent.com/79305154/151455474-1afa7d76-0b53-4522-8b75-0416d99671e1.JPG)
