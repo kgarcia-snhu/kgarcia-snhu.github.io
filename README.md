@@ -2,7 +2,7 @@
 
 ## Southern New Hampshire University Software Engineering ePortfolio
 
-### CS499 Computer Science Capstone
+## CS499 Computer Science Capstone
 My name is Keone, best pronounced as (Ke Own E). I continue to hold the Presidents List at Southern New Hampshire University. I’m a first-generation dual major, studying computer science and data analytics. Both of which have concentrations in software engineering and project management. The projects associated with this page are part of the Computer Science program from Southern New Hampshire University. The ePortfolio contains a narrated code review, enhancements to completed work in three categories of (Software Design and Engineering, Algorithms and Data Structure, and Databases), justification narratives, and a professional self-assessment. These artifacts have been developed previously in my years at SNHU and have been further developed to expand the complexity of software and functionality to showcase my abilities.  
 
 ## Table of Content
@@ -12,7 +12,7 @@ My name is Keone, best pronounced as (Ke Own E). I continue to hold the Presiden
 4. Algorithms and Data Structure: Artifact 2 Encryption File Enhancement
 5. Databases: Artifact 3 RMA_Orders Database Enhancement 
 
-### Professional Self-Assessment
+## Professional Self-Assessment
 
 I’ve been in the computer science program since January of 2018, putting me at 4 years to complete my degree. While in the program, I have learned that there are many applications for hardware and software to co-exist. When building a computer to meet the needs of a client; cost, performance, and limitations are considered to provide the best possible outcome. When developing code, security policies are used to ensure that code written relinquishes bugs, vulnerabilities, and data loss. Within the computer science program, having the ability to work with diverse programming languages along with comments in code are good practice, and provides avenues to reverse engineer software.
 
@@ -22,7 +22,7 @@ From this projection, I strongly believe that I am on course to achieve knowledg
 
 Red Ventures, C. (2022, January 12). Compare top careers in computer science. Get an Education the World Needs | ComputerScience.org. Retrieved January 28, 2022, from https://www.computerscience.org/careers/  
 
-### Code Review
+## Code Review
 
 Provided is a link to my Code Review video where I address Existing Functionality, Code Analysis, and Enhancements planned.
 https://www.screencast.com/t/u37vPUqJPSo
@@ -32,7 +32,7 @@ link to script - [Code Review Script.pdf](https://github.com/kgarcia-snhu/kgarci
 * Code Analysis: A review of code structure, commenting, efficiencies, and an explanation of findings.
 * Enhancements: A walk through of enhancements planned and an explanation of execution or limitations.
 
-### Software Design and Engineering: Artifact 1 Thermostat Lab Enhancement
+## Software Design and Engineering: Artifact 1 Thermostat Lab Enhancement
 --------------------------------------------------------------------------------
 ![CC3220S LaunchPad2](https://user-images.githubusercontent.com/79305154/151455474-1afa7d76-0b53-4522-8b75-0416d99671e1.JPG)
 --------------------------------------------------------------------------------
@@ -46,8 +46,134 @@ I selected this artifact as I believe the CC3220S Launchpad adds many possibilit
 
 #### For example:
 ---------------------------------------------------------------------------
-#### State Machine:
-![State Machines](https://user-images.githubusercontent.com/79305154/151462751-1f7665c2-e387-4661-baa1-28d8dc70c4bd.png)
+#### State Machines:
+*** 
+/*
+========== State Machine's States ==========
+ */
+
+/* Increase or decrease setpoint from gpioButtonFxn0 or gpioButtonFxn1 buttons */
+enum BF_STATES {BF_SMStart, BF_SMWaitRise, BF_SMWaitFall} BF_STATE;
+
+/*
+ * BF_SMStart - Start
+ *  BF_SMWaitRise - Button Flag Wait Rise
+ *  BF_SMWaitFall - Button Flag Wait Fall
+ *  Button Flag callback if gpioButtonFxn0 or gpioButtonFxn1 are selected as 0 or 1
+ */
+
+void TickFct_ButtonFlag() {
+    switch(BF_STATE) { // Transitions
+        case BF_SMStart:
+            /* Initialize buttons to 0 */
+            Button0_Flag = 0; // Initialize outputs
+            Button1_Flag = 0; // Initialize outputs
+            BF_STATE = BF_SMWaitRise;
+            break;
+        case BF_SMWaitRise:
+            // Wait for button flag 0(Right) or 1(Left) to be selected
+            if (Button0_Flag || Button1_Flag) {
+                BF_STATE = BF_SMWaitFall;
+            }
+            break;
+        case BF_SMWaitFall:
+            // If no button flag is raised go to BF_SMWaitRiseLow
+            if (!(Button0_Flag || Button1_Flag)){
+                BF_STATE = BF_SMWaitRise;
+            }
+            break;
+        default:
+            BF_STATE = BF_SMStart; // Indicates initial call
+            break;
+    }
+
+    switch(BF_STATE) { // State actions
+        case BF_SMStart:
+            break;
+        case BF_SMWaitRise:
+            break;
+        case BF_SMWaitFall:
+            // Update setpoint temperature value
+            if (Button0_Flag) {
+                setpoint -= 1;       // Decrease setpoint by 1° C // <30,25,1,0339> <temperature, setpoint, heat, cool, seconds>
+                Button0_Flag = 0;    // Update Button0_Flag
+            }
+            if (Button1_Flag) {
+                setpoint += 1;       // Increase setpoint by 1° C // <30,32,0,0339> <temperature, setpoint, heat, cool, seconds>
+                Button1_Flag = 0;    // Update Button1_Flag
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+
+/*
+========== State Machine's States Continued ==========
+ */
+
+/* Temperature heat or cool indicator activates LED red ON or OFF indicating heater is on or off */
+enum TL_STATES {TL_SMStart, TL_SMOff, TL_SMOn} TL_STATE;
+
+/*
+ *  TL_SMStart - Start
+ *  TL_SMOff - Temperature Light Off (Heater or Cooling Off)
+ *  TL_SMOn - Temperature Light On (Heater or Cooling On)
+ */
+
+void TickFct_TmpLED() {
+    switch(TL_STATE) { // Transitions
+        case TL_SMStart:
+            heat = 0;
+            cool = 0;
+            TL_STATE = TL_SMOff; // default Temperature Light is off
+            break;
+        case TL_SMOff:
+            /* If temperature is less than setpoint proceed to STATE TL_On */
+            if (temperature < setpoint) {
+                TL_STATE = TL_SMOn;
+                GPIO_write(CONFIG_GPIO_LED_0, CONFIG_GPIO_LED_ON);
+                heat = 1; // Temperature sensor heat is on (Heater activates) LED red on
+            }
+            /* If temperature is greater than setpoint proceed to STATE TL_On */
+            if (temperature > setpoint) {
+                TL_STATE = TL_SMOn;
+                GPIO_write(CONFIG_GPIO_LED_0, CONFIG_GPIO_LED_ON);
+                cool = 1; // Temperature sensor cooling is off (A/C is turned off) LED red on
+            }
+            break;
+        case TL_SMOn:
+            /* If temperature is greater than setpoint proceed to STATE TL_Off */
+            if (!(temperature < setpoint)){
+                TL_STATE = TL_SMOff;
+                GPIO_write(CONFIG_GPIO_LED_0, CONFIG_GPIO_LED_OFF);
+                heat = 0; // Temperature sensor heat is off (Heater is turned off) LED red off
+            }
+            /* If temperature is greater than setpoint proceed to STATE TL_Off */
+            if (!(temperature > setpoint)){
+                TL_STATE = TL_SMOff;
+                GPIO_write(CONFIG_GPIO_LED_0, CONFIG_GPIO_LED_OFF);
+                cool = 0; // Temperature sensor cooling is on (A/C activates) LED red off
+            }
+            break;
+        default:
+            TL_STATE = TL_SMStart; // Initialize outputs
+            break;
+    }
+
+    switch(TL_STATE) { // State actions
+        case TL_SMStart: // Start
+            break;
+        case TL_SMOff: // Temperature Light Off
+            break;
+        case TL_SMOn: // Temperature Light On
+            break;
+        default:    // default
+            break;
+    }
+}
+***
 
 ---------------------------------------------------------------------------
 #### Pseudo Code:
@@ -62,7 +188,7 @@ This artifact demonstrates the ability to design and evaluate computing solution
 Although I would have preferred that the cool and heat functions had their own dedicated LED output of Red, Green, or Yellow. By maintaining access to the drivers of UART, I2C, the project is able to read the temperature output and record the temperature, setpoint, heat, cool, and seconds parameters. As a result, I have a Thermostat Application that adheres to coding standards, best practices, and illustrates the programming skills that have matured through my education at Southern New Hampshire University as a Computer Science, Software Engineering student.
 
 
-### Algorithms and Data Structure: Artifact 2 Encryption File Enhancement
+## Algorithms and Data Structure: Artifact 2 Encryption File Enhancement
 --------------------------------------------------------------------------------
 ![free-encryption](https://user-images.githubusercontent.com/79305154/151493285-aba0dc07-24e5-49bc-b772-884ad848b286.jpg)
 --------------------------------------------------------------------------------
@@ -74,21 +200,21 @@ I have chosen to select the artifact Encryption_File. The artifact originates fr
 
 I selected this artifact and believe that the algorithms, data structures, and tests developed successfully create an encryption file using additional resources. Hidden are the contents unavailable unless accessed using an encryption key. The key used in this artifact consists of an encrypt/decrypt source string using a XOR transformation algorithm found in https://www.programmingalgorithms.com/algorithm/xor-encryption/cpp/. The inputdatafile.txt consists of Lorem Ipsum generated content to support the XOR function https://pirateipsum.me/. I enjoyed reviewing the resources necessary that allowed this program to function correctly. Using C++ language, I was able to evaluate assertions, include input output streams, manipulators, file streams, string streams, and convert time values to strings. The encryption process was difficult at first, after constructing the source key for the encrypt_decrypt string. A For loop is used to create the output of the file by defining the XOR function. To evaluate the output, the program required the ability to read a file, I decided to use an If statement to read the file and return the text. The student’s name is then found and returned then saved. The program creates a new encryption file that is secure and displays the decrypted file information.
 
-#### For example:
+### For example:
 ---------------------------------------------------------------------------
 ![Picture1](https://user-images.githubusercontent.com/79305154/151493319-6e73fdc0-0452-4748-9ab5-55f5e382c8d3.png)
 ![Picture3](https://user-images.githubusercontent.com/79305154/151493329-4ecd01f5-e900-4f1c-a000-9be8a86430e9.png)
 ![Picture2](https://user-images.githubusercontent.com/79305154/151493335-48b94d4a-a440-4be8-9f92-07287b47f1fc.png)
 
 ---------------------------------------------------------------------------
-#### Pseudo Code:
+### Pseudo Code:
 ![Encryption_File Pseudo Code](https://user-images.githubusercontent.com/79305154/151493413-03c5d27c-959d-4412-8102-90617adf980a.png)
 
 Reflecting on the process of enhancing and modifying this artifact, I realize that without the resources referenced in this program, the necessary conversion to transform the encrypted file into a decrypted format would be impossible. I now understand the value of algorithms that use such complex functions like in cryptocurrencies. By focusing on key elements of the XOR encryption key, the functionality and components allowed the encryption to use a key at each value. By following sources to read the inputdatafile.txt, the file was embedded into the project and the code written saved a new file for encryption and decryption to take place.
 
 The skills for this artifact demonstrate an ability to develop a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources. Initially, I had issues with the program accessing the inputdatafile.txt file. When trying to read the file Microsoft Visual Studio prompted an error that the file was not found. After researching online, I found that in order to access external files, MVS requires the file to be embedded within the source folder location. By doing this, I was able to find a solution to address potential design flaws in software, but wonder how other projects tackle issues of the same matter for encryption? By embedding the file, the encrypt_decrypt function key was used at each value to output values saved. I routinely placed sections in code to output the values of strings to determine what is being written as a check and balance. 
 
-For example: 
+### For example: 
 Use cout to test file output if needed
 - //std::cout << file_text << std::endl; // test file_text output   
 - //std::cout << filename << std::endl;  // test filename output
@@ -130,7 +256,7 @@ This artifact demonstrates an ability to use well-founded and innovative techniq
 As a result, I have an Encryption_File application that adheres to coding standards, best practices, and illustrates the programming skills that have matured through my education at SNHU as a Computer Science software engineering student.
 
 
-### Databases: Artifact 3 RMA_Orders Database 
+## Databases: Artifact 3 RMA_Orders Database 
 --------------------------------------------------------------------------------
 
 
