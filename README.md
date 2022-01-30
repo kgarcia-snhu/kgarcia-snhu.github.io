@@ -47,7 +47,7 @@ I selected this artifact as I believe the CC3220S Launchpad adds many possibilit
 #### For example:
 ---------------------------------------------------------------------------
 #### State Machines:
-*** 
+``` 
 /*
 ========== State Machine's States ==========
  */
@@ -173,7 +173,7 @@ void TickFct_TmpLED() {
             break;
     }
 }
-***
+```
 
 ---------------------------------------------------------------------------
 #### Pseudo Code:
@@ -216,8 +216,9 @@ The skills for this artifact demonstrate an ability to develop a security mindse
 
 ### For example: 
 Use cout to test file output if needed
-- //std::cout << file_text << std::endl; // test file_text output   
-- //std::cout << filename << std::endl;  // test filename output
+```
+//std::cout << file_text << std::endl; // test file_text output   
+//std::cout << filename << std::endl;  // test filename output
 
 std::string encrypt_decrypt(const std::string& source, const std::string& key)
 {
@@ -246,6 +247,7 @@ std::string encrypt_decrypt(const std::string& source, const std::string& key)
 	// return the transformed string
 	return output;		// used to return output
 }
+```
 
 Using assert within the program helped to verify variables and the arguments used to determine its output. By listing the output of variables using cout and using assertions, I was able to find and eradicate security vulnerabilities or bugs within the program. I feel that because this program is more of an entry level program to illustrate the use of an encryption key. The ability to define and ensure that all data is explicitly validated has been achieved as the file accessed is embedded within the program. I would believe that software developed to address security protection of file transfers would be far more aggressive in protecting the contents of the file, changing the key regularly so that no one could access the information if they had one part of the decryption process. Lastly, I believe that my experience in developing the Encryption_File project allowed me to see how software accesses information and by using a security mindset, secures the information using an encryption to be accessed only when a decryption key is accessible.
 
