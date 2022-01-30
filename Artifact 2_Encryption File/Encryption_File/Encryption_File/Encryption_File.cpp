@@ -14,19 +14,19 @@
  ** Use the inputdatafile.txt
  *
  *
- ## Required Changes ##
- ##
- ## Update Pseudo code descriptions and layout.
- ## Include assert functions to verify input and output
- ## Update Loops, branches, nesting, and use proper logic.
- ## Ensure use of formating, date, logic, spacing, tabs, line breaks, curly braces, and brackets.
- ## Consider whitespace, remove unnecessary spacing.
- ## Ensure naming conventions of fields/constants/variables/parameters/classes/libraries clear and meaningful.
- ## Remove excess comments - Over commenting, while useful can lead to distractions or large files.
- ## Add commenting to functionality - Provide necessary comments to specific functions required .
- ## Ensure functions have the variables that support them declared near by - Relocate declarations above where the function is called.
- ## Ensure Project Requirements are fulfilled and improvements support quality, efficiency, and security.
- ## Create ReadMe file and include project outcome and steps.
+ * -- Required Changes --
+ *
+ * Update Pseudo code descriptions and layout.
+ * Include assert functions to verify input and output
+ * Update Loops, branches, nesting, and use proper logic.
+ * Ensure use of formating, date, logic, spacing, tabs, line breaks, curly braces, and brackets.
+ * Consider whitespace, remove unnecessary spacing.
+ * Ensure naming conventions of fields/constants/variables/parameters/classes/libraries clear and meaningful.
+ * Remove excess comments - Over commenting, while useful can lead to distractions or large files.
+ * Add commenting to functionality - Provide necessary comments to specific functions required .
+ * Ensure functions have the variables that support them declared near by - Relocate declarations above where the function is called.
+ * Ensure Project Requirements are fulfilled and improvements support quality, efficiency, and security.
+ * Create ReadMe file and include project outcome and steps.
  *
 */
 
