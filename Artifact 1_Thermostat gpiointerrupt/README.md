@@ -216,11 +216,9 @@ Callback function for the GPIO interrupt on CONFIG_GPIO_BUTTON_1.
 Note: GPIO interrupts are cleared prior to invoking callbacks. / void gpioButtonFxn1(uint_least8_t index) { / Toggle a temperature setpoint for LED params */ Button1_Flag = 1; }
 // Temperature variables int16_t setpoint; // Desired Temperature set by buttons to increase or decrease value (UART simulation sent to server via wifi using terminal on Com3 port) int16_t temperature; // Sensor Temperature located on Launchpad near WIFI logo, small square chip TMP006 (via I2C) int8_t heat; // Indicates a 0 or 1, 0 = Heater and Temperature Light is off, 1 = Heater and Temperature Light are on (via GPIO and interrupt)
 
-What did you do particularly well? I struggled from the very beginning of the course, trying to work with the examples from the book to then utilize the skills gained from the examples and into the project using the CC3220S Launchpad. I believe that early on I did well with designing a state machine diagram and performing the input-output exercises. Once I finally grasped the concepts and methods it became easier to implement state machines in code to perform actions.
 
-Where could you improve? I could improve on the syntax language of C to better structure code and readability. I find that my code uses more explanations as I learn to develop, this may need to be cleaned up at a later time to not cause confusion with all of my code comments.
-
-What tools and/or resources are you adding to your support network? I've been using digit, geeksforgeeks, tutorialspoint, SEI Cert, Barrgroup, w3schools, scientific research, and The Coding Lib
+What tools and/or resources are you adding to your support network? 
+I've been using digit, geeksforgeeks, tutorialspoint, SEI Cert, Barrgroup, w3schools, scientific research, and The Coding Lib
 
   https://www.digit.in/technology-guides/fasttrack-to-embedded-systems/what-are-embedded-systems.html
   
@@ -237,6 +235,6 @@ What tools and/or resources are you adding to your support network? I've been us
   https://www.scirp.org/index.aspx
   
   The Coding Lib - https://www.youtube.com/watch?v=R2gIVQZU24U
-What skills from this project will be particularly transferable to other projects and/or course work? The knowledge and skill of state machine implementation, diagrams, and the components along with the resources that explain why limitations and constraints contribute to improved functionality will help in other projects.
 
-How did you make this project maintainable, readable, and adaptable? This project was very difficult for me as I had not understood how to approach a solution. After asking many questions, I realized that I must backtrack to a few chapters earlier in the course to fill in the gap. While I felt that the information was relatable, I needed to view the project from another perspective. One of the students suggested to first develop a state machine diagram to become familiar with the components of the state machine start and default. To then also become familiar with the peripherals, by following examples in zybooks and reviewing resources, I began to try new ideas. The foundation for this project provided me with the ability to develop a completed project that illustrates a thermostat to increase and decrease the temperature by 1 degree Celsius and activates the heater by displaying a led light on or off and showcasing parameters that would be sent via the cloud (atmospheric temperature, setpoint(desired temp), heat indicator on or off, time elapsed(seconds)).
+What skills from this project will be particularly transferable to other projects and/or course work? 
+The knowledge and skill of state machine implementation, diagrams, and the components along with the resources that explain why limitations and constraints contribute to improved functionality will help in other projects.
