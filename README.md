@@ -13,7 +13,6 @@ My name is Keone, best pronounced as (Ke Own E). I continue to hold the Presiden
 5. Databases: Artifact 3 RMA_Orders Database Enhancement 
 
 ## Professional Self-Assessment
-
 I’ve been in the computer science program since January of 2018, putting me at 4 years to complete my degree. While in the program, I have learned that there are many applications for hardware and software to co-exist. When building a computer to meet the needs of a client; cost, performance, and limitations are considered to provide the best possible outcome. When developing code, security policies are used to ensure that code written relinquishes bugs, vulnerabilities, and data loss. Within the computer science program, having the ability to work with diverse programming languages along with comments in code are good practice, and provides avenues to reverse engineer software.
 
 As a first generation dual major working towards a BSCS and BSDA, I aim to work as a software engineer and a data analyst/scientist. To outline my career goals in computer science, I would like to share projections from careers at www.computerscience.org. From “the Bureau of Labor Statistics (BLS) projects jobs for computer and information technology occupations will grow significantly — an 11% increase — from 2019 to 2029. This is significantly faster than the projected growth rate for all occupations nationwide. Some computer science jobs, such as computer and information research scientists, are projected to grow even more quickly.” (Red Ventures, 2022)
@@ -22,9 +21,7 @@ From this projection, I strongly believe that I am on course to achieve knowledg
 
 Red Ventures, C. (2022, January 12). Compare top careers in computer science. Get an Education the World Needs | ComputerScience.org. Retrieved January 28, 2022, from https://www.computerscience.org/careers/  
 
----------------------------------------------------------------------------
 ## Code Review
-
 Provided is a link to my Code Review video where I address Existing Functionality, Code Analysis, and Enhancements planned.
 https://www.screencast.com/t/u37vPUqJPSo
 link to script - [Code Review Script.pdf](https://github.com/kgarcia-snhu/kgarcia-snhu.github.io/files/7956249/Code.Review.Script.pdf)
@@ -33,11 +30,8 @@ link to script - [Code Review Script.pdf](https://github.com/kgarcia-snhu/kgarci
 * Code Analysis: A review of code structure, commenting, efficiencies, and an explanation of findings.
 * Enhancements: A walk through of enhancements planned and an explanation of execution or limitations.
 
----------------------------------------------------------------------------
 ## Software Design and Engineering: Artifact 1 Thermostat Lab Enhancement
---------------------------------------------------------------------------------
 ![CC3220S LaunchPad2](https://user-images.githubusercontent.com/79305154/151455474-1afa7d76-0b53-4522-8b75-0416d99671e1.JPG)
---------------------------------------------------------------------------------
 
 I have chosen to select the artifact Thermostat Lab. The artifact originates from course CS350 Emerging Systems and uses Code Composer Studio with a Simple Link CC3220S Launchpad in C language. The goal of this artifact is to utilize components of the launchpad to simulate a working thermostat for an HVAC system. Indicating when the unit is active using an LED, while providing an output of sensor readings and setpoint parameters sent to be viewed on a mobile app.
 
@@ -175,7 +169,6 @@ void TickFct_TmpLED() {
 }
 ```
 
----------------------------------------------------------------------------
 #### Pseudo Code:
 ![State Machines Diagam](https://user-images.githubusercontent.com/79305154/151463072-945c60b9-7c81-4049-b181-baebec582d92.png)
 
@@ -206,11 +199,9 @@ This artifact demonstrates the ability to design and evaluate computing solution
 
 Although I would have preferred that the cool and heat functions had their own dedicated LED output of Red, Green, or Yellow. By maintaining access to the drivers of UART, I2C, the project is able to read the temperature output and record the temperature, setpoint, heat, cool, and seconds parameters. As a result, I have a Thermostat Application that adheres to coding standards, best practices, and illustrates the programming skills that have matured through my education at Southern New Hampshire University as a Computer Science, Software Engineering student.
 
----------------------------------------------------------------------------
+
 ## Algorithms and Data Structure: Artifact 2 Encryption File Enhancement
---------------------------------------------------------------------------------
 ![free-encryption](https://user-images.githubusercontent.com/79305154/151493285-aba0dc07-24e5-49bc-b772-884ad848b286.jpg)
---------------------------------------------------------------------------------
 
 I have chosen to select the artifact Encryption_File. The artifact originates from course CS405 Secure Coding and uses Microsoft Visual Studio in C++ language. The goal of this artifact is to showcase a secure transfer of data from one location to another. Mitigating errors in accessing an encrypted file and outputting the contents into a new file using an encryption key. 
 
@@ -220,12 +211,10 @@ I have chosen to select the artifact Encryption_File. The artifact originates fr
 I selected this artifact and believe that the algorithms, data structures, and tests developed successfully create an encryption file using additional resources. Hidden are the contents unavailable unless accessed using an encryption key. The key used in this artifact consists of an encrypt/decrypt source string using a XOR transformation algorithm found in https://www.programmingalgorithms.com/algorithm/xor-encryption/cpp/. The inputdatafile.txt consists of Lorem Ipsum generated content to support the XOR function https://pirateipsum.me/. I enjoyed reviewing the resources necessary that allowed this program to function correctly. Using C++ language, I was able to evaluate assertions, include input output streams, manipulators, file streams, string streams, and convert time values to strings. The encryption process was difficult at first, after constructing the source key for the encrypt_decrypt string. A For loop is used to create the output of the file by defining the XOR function. To evaluate the output, the program required the ability to read a file, I decided to use an If statement to read the file and return the text. The student’s name is then found and returned then saved. The program creates a new encryption file that is secure and displays the decrypted file information.
 
 #### For example:
----------------------------------------------------------------------------
 ![Picture1](https://user-images.githubusercontent.com/79305154/151493319-6e73fdc0-0452-4748-9ab5-55f5e382c8d3.png)
 ![Picture3](https://user-images.githubusercontent.com/79305154/151493329-4ecd01f5-e900-4f1c-a000-9be8a86430e9.png)
 ![Picture2](https://user-images.githubusercontent.com/79305154/151493335-48b94d4a-a440-4be8-9f92-07287b47f1fc.png)
 
----------------------------------------------------------------------------
 #### Pseudo Code:
 ![Encryption_File Pseudo Code](https://user-images.githubusercontent.com/79305154/151493413-03c5d27c-959d-4412-8102-90617adf980a.png)
 
@@ -288,8 +277,6 @@ This artifact demonstrates an ability to use well-founded and innovative techniq
 
 As a result, I have an Encryption_File application that adheres to coding standards, best practices, and illustrates the programming skills that have matured through my education at SNHU as a Computer Science software engineering student.
 
----------------------------------------------------------------------------
-## Databases: Artifact 3 RMA_Orders Database 
---------------------------------------------------------------------------------
 
+## Databases: Artifact 3 RMA_Orders Database 
 
