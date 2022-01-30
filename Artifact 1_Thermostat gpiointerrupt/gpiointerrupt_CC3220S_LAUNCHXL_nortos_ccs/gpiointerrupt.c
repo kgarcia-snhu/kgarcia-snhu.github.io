@@ -16,23 +16,23 @@
  *
  * -- Required Changes --
  *
- * Update Pseudocode with changes to functionality.
- * Change LED Output suited for both the Heat and Cool function - The red LED is the only option available and is set to blink.
- * Update Loops, branches, nesting, and use proper logic.
- * Update Cases, use defaults.
- * Ensure use of formating, date, logic, spacing, tabs, line breaks, curly braces, and brackets.
- * Consider whitespace, remove unnecessary spacing.
- * Ensure naming conventions of fields/constants/variables/parameters/classes/libraries clear and meaningful.
- * Remove redundant variables - CONFIG_GPIO_LED_1, no longer in use as I2C driver uses the same pins for CONFIG_GPIO_LED_1.
- * Remove excess comments - Over commenting, while useful can lead to distractions or large files.
- * Add commenting to functionality - Provide necessary comments to specific functions required .
- * Add parameters for cooling system displayed from terminal - In UART, add parameters to invoke cooling when temp is greater than setpoint.
- * Add required drivers - Add the Timer Driver for tick counts, Add the I2C Driver for temperature sensor measures.
- * Edit existing drivers - Update changes to existing drivers based on parameters set.
- * Remove non-functional drivers - Remove non-functional drivers, as some share the same pins and cause the project to fail.
- * Ensure functions have the variables that support them declared near by - Relocate declarations above where the function is called.
- * Ensure Project Requirements are fulfilled and improvments support quality, efficiency, and security.
- * Create ReadMe file and include project outcome and steps.
+ 1. Update Pseudocode with changes to functionality.
+ 2. Change LED Output suited for both the Heat and Cool function - The red LED is the only option available and is set to blink.
+ 3. Update Loops, branches, nesting, and use proper logic.
+ 4. Update Cases, use defaults.
+ 5. Ensure use of formating, date, logic, spacing, tabs, line breaks, curly braces, and brackets.
+ 6. Consider whitespace, remove unnecessary spacing.
+ 7. Ensure naming conventions of fields/constants/variables/parameters/classes/libraries clear and meaningful.
+ 8. Remove redundant variables - CONFIG_GPIO_LED_1, no longer in use as I2C driver uses the same pins for CONFIG_GPIO_LED_1.
+ 9. Remove excess comments - Over commenting, while useful can lead to distractions or large files.
+ 10. Add commenting to functionality - Provide necessary comments to specific functions required .
+ 11. Add parameters for cooling system displayed from terminal - In UART, add parameters to invoke cooling when temp is greater than setpoint.
+ 12. Add required drivers - Add the Timer Driver for tick counts, Add the I2C Driver for temperature sensor measures.
+ 13. Edit existing drivers - Update changes to existing drivers based on parameters set.
+ 14. Remove non-functional drivers - Remove non-functional drivers, as some share the same pins and cause the project to fail.
+ 15. Ensure functions have the variables that support them declared near by - Relocate declarations above where the function is called.
+ 16. Ensure Project Requirements are fulfilled and improvments support quality, efficiency, and security.
+ 17. Create ReadMe file and include project outcome and steps.
  *
  *
  * Copyright (c) 2015-2020, Texas Instruments Incorporated
