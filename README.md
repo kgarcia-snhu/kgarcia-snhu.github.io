@@ -125,10 +125,7 @@ Using assert within the program helped to verify variables and the arguments use
 
 This artifact demonstrates an ability to design and evaluate computing solutions that solve a given problem using algorithmic principles and computer science practices and standards appropriate to its solution, while managing the trade-offs involved in design choices. I have confirmed that pseudocode developed aligns to the description of steps taken to structure and deploy programmed outcomes. Using logic and algorithms to solve conversions of text from encrypted to decrypted format. I have confirmed that the encrypt_decrypt functions work correctly with the program, outputting new files for each. The approach taken to solve the functions for both encryption and decryption output were first mapped in pseudo code to segment each within the program. I then determined the functions to establish within the XOR key, the inputdatafile.txt was imported into the program and set to read the output, generating a new file for encryption and decryption to be saved. Best practices have been enforced, using proper spacing or tabs, white space, line breaks, curly braces, and brackets that have been checked. Naming conventions have been reviewed for readability, testing has been performed, using assertions and line outputs prior to submitting deliverables.
 
-
-This artifact demonstrates an ability to demonstrate an ability to use well-founded and innovative techniques, skills, and tools in computing practices for the purpose of implementing computer solutions that deliver value and accomplish industry-specific goals.
-
-As a result, I have an Encryption_File Application that adheres to coding standards, best practices, and illustrates the programming skills that have matured through my education at Southern New Hampshire University as a Computer Science, Software Engineering student. 
+As a result, I have an Encryption_File application that adheres to coding standards, best practices, and illustrates the programming skills that have matured through my education at SNHU as a Computer Science software engineering student.
 
 
 ### Databases: Artifact 3 
