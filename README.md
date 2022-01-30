@@ -89,16 +89,9 @@ Reflecting on the process of enhancing and modifying this artifact, I realize th
 This skills for this artifact demonstrate an ability to develop a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources. Initially, I had issues with the program accessing the inputdatafile.txt file. When trying to read the file Microsoft Visual Studio prompted an error that the file was not found. After researching online, I found that in order to access external files, MVS requires the file to be embedded within the source folder location. By doing this, I was able to find a solution to address potential design flaws in software, but wonder how other projects tackle issues of the same matter for encryption? By embedding the file, the encrypt_decrypt function key was used at each value to output values saved. I routinely placed sections in code to output the values of strings to determine what is being written as a check and balance. 
 
 For example: 
-/* use cout to test file output if needed */
-//std::cout << file_text << std::endl; // test file_text output   
-//std::cout << filename << std::endl;  // test filename output
-
-std::string encrypt_decrypt(const std::string& source, const std::string& key)
-{
-	// get lengths now instead of calling the function every time.
-	// this would have most likely been in-lined by the compiler, but design for performance.
-	const auto key_length = key.length();
-	const auto source_length = source.length();
+* /* use cout to test file output if needed */
+* //std::cout << file_text << std::endl; // test file_text output   
+* //std::cout << filename << std::endl;  // test filename output
 
 	// assert that our input data is good
 	assert(key_length > 0);		// verify the key_length is greater than 0
@@ -119,7 +112,6 @@ std::string encrypt_decrypt(const std::string& source, const std::string& key)
 
 	// return the transformed string
 	return output;		// used to return output
-}
 
 Using assert within the program helped to verify variables and the arguments used to determine its output. By listing the output of variables using cout and using assertions, I was able to find and eradicate security vulnerabilities or bugs within the program. I feel that because this program is more of an entry level program to illustrate the use of an encryption key. The ability to define and ensure that all data is explicitly validated has been achieved as the file accessed is embedded within the program. I would believe that software developed to address security protection of file transfers would be far more aggressive in protecting the contents of the file, changing the key regularly so that no one could access the information if they had one part of the decryption process. Lastly, I believe that my experience in developing the Encryption_File project allowed me to see how software accesses information and by using a security mindset, secures the information using an encryption to be accessed only when a decryption key is accessible.
 
