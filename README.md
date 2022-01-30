@@ -1,7 +1,7 @@
 # kgarcia-snhu.github.io
 
 ## Southern New Hampshire University Software Engineering ePortfolio
----------------------------------------------------------------------------
+
 ## CS499 Computer Science Capstone
 My name is Keone, best pronounced as (Ke Own E). I continue to hold the Presidents List at Southern New Hampshire University. I’m a first-generation dual major, studying computer science and data analytics. Both of which have concentrations in software engineering and project management. The projects associated with this page are part of the Computer Science program from Southern New Hampshire University. The ePortfolio contains a narrated code review, enhancements to completed work in three categories of (Software Design and Engineering, Algorithms and Data Structure, and Databases), justification narratives, and a professional self-assessment. These artifacts have been developed previously in my years at SNHU and have been further developed to expand the complexity of software and functionality to showcase my abilities.  
 
@@ -11,7 +11,7 @@ My name is Keone, best pronounced as (Ke Own E). I continue to hold the Presiden
 3. Software Design and Engineering: Artifact 1 Thermostat Lab Enhancement
 4. Algorithms and Data Structure: Artifact 2 Encryption File Enhancement
 5. Databases: Artifact 3 RMA_Orders Database Enhancement 
----------------------------------------------------------------------------
+
 ## Professional Self-Assessment
 
 I’ve been in the computer science program since January of 2018, putting me at 4 years to complete my degree. While in the program, I have learned that there are many applications for hardware and software to co-exist. When building a computer to meet the needs of a client; cost, performance, and limitations are considered to provide the best possible outcome. When developing code, security policies are used to ensure that code written relinquishes bugs, vulnerabilities, and data loss. Within the computer science program, having the ability to work with diverse programming languages along with comments in code are good practice, and provides avenues to reverse engineer software.
@@ -21,6 +21,7 @@ As a first generation dual major working towards a BSCS and BSDA, I aim to work 
 From this projection, I strongly believe that I am on course to achieve knowledge and skills of high demand in the industry. I understand that both degrees and the concentrations afforded are unique. But I feel that each provides a necessary skill in the computer science industry. Being new to coding, SNHU has provided me with my first steps to developing code. I plan to pursue an internship or a position in the industry that can continue to teach me industry standards so that I may implement each skill as I learn. My dream job is to achieve the status of a data scientist. I would like to pursue this position now that I am learning code to develop algorithms that satisfy analytical reasoning for reports. At some point in my career, I would like to teach students skills and knowledge based on my experience in the industry.
 
 Red Ventures, C. (2022, January 12). Compare top careers in computer science. Get an Education the World Needs | ComputerScience.org. Retrieved January 28, 2022, from https://www.computerscience.org/careers/  
+
 ---------------------------------------------------------------------------
 ## Code Review
 
@@ -31,6 +32,7 @@ link to script - [Code Review Script.pdf](https://github.com/kgarcia-snhu/kgarci
 * Existing Functionality: A walk through of what existing code does and how it works.
 * Code Analysis: A review of code structure, commenting, efficiencies, and an explanation of findings.
 * Enhancements: A walk through of enhancements planned and an explanation of execution or limitations.
+
 ---------------------------------------------------------------------------
 ## Software Design and Engineering: Artifact 1 Thermostat Lab Enhancement
 --------------------------------------------------------------------------------
