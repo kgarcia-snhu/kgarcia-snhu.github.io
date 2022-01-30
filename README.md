@@ -44,13 +44,13 @@ I have chosen to select the artifact Thermostat Lab. The artifact originates fro
 
 I selected this artifact as I believe the CC3220S Launchpad adds many possibilities to Software Design and Engineering. Specific to the Thermostat Lab project, many components required setup configuration to communicate with the board dependent on availability of pins and resources. I enjoyed learning the basics of C language and realized by enhancing this project. I had a whole new experience when developing the changes to enhance my ideas. I knew that the best course of action would be to start at the very beginning regarding the program, its software, and settings. The work performed ensured each process had proper components of the CC3220S Launchpad drivers implemented in configuration and code. The enhancement changes to the gpiointerrupt LED functionality were then introduced to include both the heat and cool functions to activate an LED. The specific components of the artifact that showcase my abilities in software design and engineering are in the use of State Machines to activate an LED when either the heat or cool function is triggered from the callback. I found that on the CC3220S board, there were limitations to the resources available in using LED outputs. It was determined that in order to signal an active function of heat or cool, the Red LED would blink for either function when active. Indicating when the unit is in heat or cool mode, while providing an output of temperature sensor readings based on the setpoint parameters sent to a wireless thermostat, recording measures to a database. 
 
-For example:
+#### For example:
 ---------------------------------------------------------------------------
-## State Machine:
+#### State Machine:
 ![State Machines](https://user-images.githubusercontent.com/79305154/151462751-1f7665c2-e387-4661-baa1-28d8dc70c4bd.png)
 
 ---------------------------------------------------------------------------
-## Pseudo Code:
+#### Pseudo Code:
 ![State Machines Diagam](https://user-images.githubusercontent.com/79305154/151463072-945c60b9-7c81-4049-b181-baebec582d92.png)
 
 Reflecting on the process of enhancing and modifying this artifact, I gained insight on how to focus on key elements in configuration, component limitations, and code structure. One specific detail that I used for the state machine was to keep it simple. By developing pseudo code, I was able to plan out my changes and implement in code how the program would perform with the CC3220S Launchpad.
@@ -74,14 +74,14 @@ I have chosen to select the artifact Encrypted Data. The artifact originates fro
 
 I selected this artifact and believe that the algorithms, data structures, and tests develop an encryption file using additional resources. Hidden are the contents unavailable unless accessed using an encryption key. The key used in this artifact consists of an encrypt/decrypt source string using a XOR transformation algorithm found in https://www.programmingalgorithms.com/algorithm/xor-encryption/cpp/. The inputdatafile.txt consists of Lorem Ipsum generated content to support the XOR function https://pirateipsum.me/. I enjoyed reviewing the resources necessary that allowed this program to function correctly. Using C++ language, I was able to evaluate assertions, include input output streams, manipulators, file streams, string streams, and convert time values to strings. The encryption process was difficult at first, after constructing the source key for the encrypt_decrypt string. A For loop is used to create the output of the file by defining the XOR function. To evaluate the output, the program required the ability to read a file, I decided to use an If statement to read the file and return the text. The student’s name is then found and returned then saved. The program creates a new encryption file that is secure and displays the decrypted file information.
 
-For example:
+#### For example:
 ---------------------------------------------------------------------------
 ![Picture1](https://user-images.githubusercontent.com/79305154/151493319-6e73fdc0-0452-4748-9ab5-55f5e382c8d3.png)
 ![Picture3](https://user-images.githubusercontent.com/79305154/151493329-4ecd01f5-e900-4f1c-a000-9be8a86430e9.png)
 ![Picture2](https://user-images.githubusercontent.com/79305154/151493335-48b94d4a-a440-4be8-9f92-07287b47f1fc.png)
 
 ---------------------------------------------------------------------------
-## Pseudo Code:
+#### Pseudo Code:
 ![Encryption_File Pseudo Code](https://user-images.githubusercontent.com/79305154/151493413-03c5d27c-959d-4412-8102-90617adf980a.png)
 
 Reflecting on the process of enhancing and modifying this artifact, I realize that without the resources referenced in this program, the necessary conversion to transform the encrypted file into a decrypted format would be impossible. I now understand the value of algorithms that use such complex functions like in cryptocurrencies. By focusing on key elements of the XOR encryption key, the functionality and components allowed the encryption to use a key at each value. By following sources to read the inputdatafile.txt, the file was embedded into the project and the code written saved a new file for encryption and decryption to take place.
