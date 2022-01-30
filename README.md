@@ -19,7 +19,7 @@ As a first generation dual major working towards a BSCS and BSDA, I aim to work 
 
 From this projection, I strongly believe that I am on course to achieve knowledge and skills of high demand in the industry. I understand that both degrees and the concentrations afforded are unique. But I feel that each provides a necessary skill in the computer science industry. Being new to coding, SNHU has provided me with my first steps to developing code. I plan to pursue an internship or a position in the industry that can continue to teach me industry standards so that I may implement each skill as I learn. My dream job is to achieve the status of a data scientist. I would like to pursue this position now that I am learning code to develop algorithms that satisfy analytical reasoning for reports. At some point in my career, I would like to teach students skills and knowledge based on my experience in the industry.
 
-[Red Ventures, C. (2022, January 12). Compare top careers in computer science. Get an Education the World Needs | ComputerScience.org. Retrieved January 28, 2022, from] (https://www.computerscience.org/careers/)
+[Red Ventures, C. (2022, January 12). Compare top careers in computer science. Get an Education the World Needs, ComputerScience.org. Retrieved January 28, 2022, from] (https://www.computerscience.org/careers/)
 
 ## Code Review
 Provided is a link to my Code Review video where I address Existing Functionality, Code Analysis, and Enhancements planned.
