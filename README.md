@@ -288,20 +288,31 @@ I have chosen to select artifact RMA_Orders Database. The artifact originates fr
  
 * I plan to edit the CSV files and find areas to enhance the functionality of the reports for the project. While improving code by checking for code clarity, consistency, design, features, and coding standard use. I also plan to create a ReadMe.txt file and review naming conventions for readability in database tables, attributes, and variables.
 
-I selected this artifact as I believe by using sources of data formatted in Comma-Separated Values provides a simple form to create a useful database. Once the data is selected, within SQL the database must be created, then the tables associated with the source file are created. The data is then imported into the SQL database and the attributes necessary to link the rows of data help to connect the relationships between each table. For this artifact, I chose to add data from the https://www.oe.netl.doe.gov/OE417_annual_summary.aspx. Here I was able to locate a CSV file that listed the climate zones for each city and state. This information will be added to the database and linked to the customer profile to determine if any relationships to climate zone relate to purchase items and or returns or defects.
+I selected this artifact as I believe by using sources of data formatted in Comma-Separated Values provides a simple form to create a useful database. Once the data is selected, within SQL the database must be created, then the tables associated with the source file are created. The data is then imported into the SQL database and the attributes necessary to link the rows of data help to connect the relationships between each table. For this artifact, I chose to add data from the https://www.oe.netl.doe.gov/OE417_annual_summary.aspx. Here I was able to locate a CSV file that listed the climate zones for each city and state. This information has been added to the database and linked to the customer profile to determine if any relationships to climate zone relates to purchase items and or returns or defects.
+
+
+Reflecting on the process of enhancing and modifying this artifact, I took many steps to prepare changes to the database structure, the fields and thier attributes. During this process I made many mistakes as naming each table, the fields, the attributes, and keys needed to be hand entered. Using CAPS on commands and proper names as used from the Pseudocode/UML Chat became difficult. I found myself having to DESCRIBE and SHOW TABLES often to verify my entires, as there were times when SELECT * would not supply the required outcome, this was due to inaccurate entries on my part when creating the database and its fields. The same can be said when performing queries to pull data, using proper syntax and with the help of the README.md file created I made sure to use beest practice with my implementation of this artifact. I had fun creating the database and assigning the links to connect the data imported within the tables. The report indicates my findings, identifying where certain products have high volumes of returns. As well as vertain states that show signs of higher percentages when it comes to purchases and returns overall. While I was not able to determine if the inclusion of climate was a benefactor to higher returns. The data indicates the highest frequencies in colder climates.
+
 
 List of Enhancements performed
-2. Pseudocode descriptions and layout structure have been updated to align with the program functionality.
-3. Verified formatting, date, spacing, tabs, line breaks, curly braces, and brackets.
-4. Reviewed considerations of whitespace, removing unnecessary spacing.
-5. Ensured naming conventions of fields/constants/variables/parameters/classes/libraries clear and meaningful.
-6. Ensure Project Requirements are fulfilled and improvments support quality, efficiency, and security.
-7. Create ReadMe file and include project outcome and steps.
-8. Cleaned data within the csv files: 
+1. Add new content to Database - added resource of climate to database for each state found at https://www.energy.gov/eere/buildings/downloads/zerh-tour-zero-homepage-data-table-datafile-1012019 
+2. Pseudocode descriptions/ UML Chart and layout structure have been updated to align with the program functionality.
+3. Cleaned data within the csv files: From customers, removed (-) from phone numbers, 98868 updates were applied.
 	From customers, removed (-) from phone numbers, 98868 updates were applied.
 	From customers, fixed State listing for formatting.
 	From customers. added NULL to empty phone listings.
 	From climate by state, fixed State listing for formatting.
 	From climate by state, added NULL to empty city and climate listings.
+	Mapped Climate data to Customer Table, updated state from abbreviation to state name.
+6. Verified formatting, date, spacing, tabs, line breaks, curly braces, and brackets.
+7. Reviewed considerations of whitespace, removing unnecessary spacing.
+8. Ensured naming conventions of fields/constants/variables/parameters/classes/libraries clear and meaningful.
+9. Ensure Project Requirements are fulfilled and improvments support quality, efficiency, and security.
+10. Create ReadMe file and include project outcome and steps.
 	
-Resource - https://www.mysqltutorial.org/import-csv-file-mysql-table/	
+	
+### Resources
+https://www.mysqltutorial.org/import-csv-file-mysql-table/
+https://www.oe.netl.doe.gov/OE417_annual_summary.aspx
+https://www.energy.gov/eere/buildings/downloads/zerh-tour-zero-homepage-data-table-datafile-1012019
+
