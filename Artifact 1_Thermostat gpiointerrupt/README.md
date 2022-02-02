@@ -67,7 +67,7 @@ Please view the FreeRTOSConfig.h header file for example configuration informati
 
 // Driver Handles - Global variables UART_Handle uart;
 
-void initUART(void) { UART_Params uartParams;
+``void initUART(void) { UART_Params uartParams;
 
 UART_init();
 
@@ -84,11 +84,11 @@ if (uart == NULL) {
     /* UART_open() failed */
     while (1);
 }
-}
+}``
 
 /* ========== I2C Driver Params ========== */
 
-// I2C Global Variables static const struct { uint8_t address; uint8_t resultReg; char *id; } sensors[3] = { { 0x48, 0x0000, "11X" }, { 0x49, 0x0000, "116" }, { 0x41, 0x0001, "006" } };
+`` I2C Global Variables static const struct { uint8_t address; uint8_t resultReg; char *id; } sensors[3] = { { 0x48, 0x0000, "11X" }, { 0x49, 0x0000, "116" }, { 0x41, 0x0001, "006" } };
 
 uint8_t txBuffer[1]; uint8_t rxBuffer[2]; I2C_Transaction i2cTransaction;
 
@@ -174,7 +174,7 @@ if (I2C_transfer(i2c, &i2cTransaction))
     DISPLAY(snprintf(output, 64, "Please power cycle your board by unplugging USB and plugging back in.\n\r"))
 }
 return temperature;
-}
+}``
 
 /* ========== Timer Driver Params ========== */
 
