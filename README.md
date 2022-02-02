@@ -323,14 +323,28 @@ https://www.oe.netl.doe.gov/OE417_annual_summary.aspx
 https://www.energy.gov/eere/buildings/downloads/zerh-tour-zero-homepage-data-table-datafile-1012019
 
 The skills for this artifact demonstrate an ability to employ strategies for building collaborative environments that enable diverse audiences to support organizational decision making in the field of computer science. 
+Does the student demonstrate the ability to use interaction to create code-review experiences?
+Does the student demonstrate the ability to understand code reviews individually and within a team environment?
+Does the student demonstrate the ability to provide contextual, in-code comments that result in easily readable and understandable code?
+Does the student demonstrate the ability to support decision making for software design stakeholders?
+Does the student demonstrate the ability to discuss experiences and best practices working in collaborative environments?
 
 ##### For example:
 ![Picture7](https://user-images.githubusercontent.com/79305154/152256249-fe31c4fa-a7d7-48fb-9128-3dccbed909d5.png)
 
 The skills for this artifact demonstrate an ability to design, develop, and deliver professional-quality oral, written, and visual communications that are coherent, technically sound, and appropriately adapted to specific audiences and contexts.
-
+Does the student demonstrate the ability to communicate a code review effectively through collaborative environments?
+Does the student demonstrate the ability to discuss experiences and best practices in communication?
+Does the student demonstrate the ability to communicate appropriately to specific audiences and contexts?
+Does the student demonstrate the ability to clearly convey his or her ideas and explain his or her thought process through written, visual, or oral
+communication?
 
 The skills for this artifact demonstrate an ability to demonstrate an ability to use well-founded and innovative techniques, skills, and tools in computing practices for the purpose of implementing computer solutions that deliver value and accomplish industry-specific goals.
+Does the student demonstrate the ability to employ iterative testing techniques in the code?
+Does the student demonstrate the ability to use the software development life cycle to create realistic production schedules for software projects?
+Does the student demonstrate the ability to create industry-standard software designs?
+Does the student discuss experiences and best practices in using well-founded and innovative techniques, skills, and tools in computing practices?
+Does the student create more robust and efficient code to deliver value and accomplish industry-specific goals?
 
 #### For example:
 
