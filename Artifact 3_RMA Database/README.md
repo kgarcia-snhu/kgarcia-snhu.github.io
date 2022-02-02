@@ -27,20 +27,26 @@ https://www.oe.netl.doe.gov/OE417_annual_summary.aspx
 https://www.energy.gov/eere/buildings/downloads/zerh-tour-zero-homepage-data-table-datafile-1012019
 
 // Part 1
+
 From Codio Select Terminal and enter ``mysql;`` // this provides access to the server
 
 //Part 2
+
 ![Picture1](https://user-images.githubusercontent.com/79305154/152242549-290ff09c-2bc5-4cfc-a7a5-8410ba6d50f2.png)
 ``SHOW DATABASES;`` // perform this action to show a list of all databases
 
 // Part 3
+
 ``CREATE DATABASE Capstone22;`` // perform this action to create a new database, name the database as desired
 
 //Part 4
+
 ``USE Capstone22;``	// perform this action to select the database for CRUD actions
 
 //Part 5
+
 // create Customers table and fields
+
 ``CREATE TABLE Customers (
   CustomerID INT,
   FirstName VARCHAR(25),
@@ -55,6 +61,7 @@ From Codio Select Terminal and enter ``mysql;`` // this provides access to the s
 );``
 
 // create Orders table and fields
+
 ``CREATE TABLE Orders (
   OrderID INT,
   CustomerID INT,
@@ -64,6 +71,7 @@ From Codio Select Terminal and enter ``mysql;`` // this provides access to the s
 );``
 
 //create RMA table and fields
+
 ``CREATE TABLE RMA (
   RMAID INT,
   OrderID INT,
@@ -74,6 +82,7 @@ From Codio Select Terminal and enter ``mysql;`` // this provides access to the s
 );``
 
 //create Climate table and fields
+
 ``CREATE TABLE Clstate (
   City VARCHAR(50),
   State VARCHAR(25),
@@ -87,25 +96,32 @@ From Codio Select Terminal and enter ``mysql;`` // this provides access to the s
   ADD FOREIGN KEY(OrderID) REFERENCES Orders(OrderID);			// link tables and thier rows to the OrderID attribute``
 
 ![Picture2](https://user-images.githubusercontent.com/79305154/152242755-66f98cff-af35-40fb-8eed-7f0fb42a923e.png)
+
 ``SHOW TABLES;``      // shows tables created
 
 ![Picture3](https://user-images.githubusercontent.com/79305154/152242990-d5867631-8a23-412c-830a-3b5b4d01c2f0.png)
+
 ``DESCRIBE Customers;``   // list Customers table fields
 
 ![Picture4](https://user-images.githubusercontent.com/79305154/152242977-02a7d57c-d69a-4d76-a868-f6862f72e7d9.png)
+
 ``DESCRIBE Orders;``     // list Orders table fields
 
 ![Picture5](https://user-images.githubusercontent.com/79305154/152242965-e4257715-f145-4307-96cc-d36530ee3a4a.png)
+
 ``DESCRIBE RMA;``         // list RMA table fields
 
 ![Picture6](https://user-images.githubusercontent.com/79305154/152242937-59cf6f1e-720d-47a3-a933-5e6bc9755bcf.png)
+
 ``DESCRIBE Climate;``    // list Climate table fields
 
 // Part 6 
+
 ``mkdir output``			// creates output folder
 ``sudo chown mysql:mysql output``	// links output when creating outfiles
 
 // loads csv file into Capstone22 Database tables selected(Customers)	
+
 ``LOAD DATA INFILE '/home/codio/workspace/Capstone/customers.csv'
 INTO TABLE Customers
 FIELDS TERMINATED BY ','
@@ -113,6 +129,7 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n';``						// prompted Query OK, 100000 rows affected (1.63 sec) if successful
 
 // loads csv file into Capstone22 Database tables selected(Orders)
+
 ``LOAD DATA INFILE '/home/codio/workspace/Capstone/orders.csv'
 INTO TABLE Orders
 FIELDS TERMINATED BY ','
@@ -120,6 +137,7 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n';``					// prompted Query OK, 100000 rows affected, 11089 warnings (1.78 sec)
 
 // loads csv file into Capstone22 Database tables selected(RMA)
+
 ``LOAD DATA INFILE '/home/codio/workspace/Capstone/rma.csv'
 INTO TABLE RMA
 FIELDS TERMINATED BY ','
@@ -127,6 +145,7 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n';``						// prompted Query OK, 100000 rows affected, 65535 warnings (1.67 sec)
 
 // loads csv file into Capstone22 Database tables selected(Climate)
+
 ``LOAD DATA INFILE '/home/codio/workspace/Capstone/climate by state.csv'
 INTO TABLE Clstate
 FIELDS TERMINATED BY ','
@@ -137,6 +156,7 @@ LINES TERMINATED BY '\n';``						// prompted Query OK, 246 rows affected (0.01 s
 // Part 7
 
 // test records for the state of Massachusetts limit ten
+
 ``SELECT COUNT(*)
   FROM Customers INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
   WHERE UPPER(Customers.state) =    'MASSACHUSETTS';
@@ -147,6 +167,7 @@ SELECT *
   Limit 10;``
 
 //  output new csv report
+
 ``SELECT Orders.OrderID AS ORDERID, Orders.CustomerID AS CUSTOMERID, Orders.SKU AS SKU, LEFT(Orders.Description, 28) AS DESCRIPTION, RMA.RMAID AS RMAID, RMA.OrderID AS RMAOID, LEFT(RMA.Reason, 28) AS REASON, RMA.Step AS STEP
   FROM Orders INNER JOIN RMA ON Orders.OrderID = RMA.OrderID
   WHERE Orders.OrderID >= 0
@@ -154,6 +175,7 @@ SELECT *
   INTO OUTFILE'/home/codio/workspace/output/Orders_ProjectOne.csv' FIELDS TERMINATED BY ',';``
 
 // test new parameters for climate
+
 ``SELECT COUNT(*)
   FROM Customers INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
   WHERE UPPERR(Customers.state) != 'NULL';
