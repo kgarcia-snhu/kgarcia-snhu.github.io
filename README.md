@@ -290,9 +290,16 @@ I have chosen to select artifact RMA_Orders Database. The artifact originates fr
 
 I selected this artifact as I believe by using sources of data formatted in Comma-Separated Values provides a simple form to create a useful database. Once the data is selected, within SQL the database must be created, then the tables associated with the source file are created. The data is then imported into the SQL database and the attributes necessary to link the rows of data help to connect the relationships between each table. For this artifact, I chose to add data from the https://www.oe.netl.doe.gov/OE417_annual_summary.aspx. Here I was able to locate a CSV file that listed the climate zones for each city and state. This information has been added to the database and linked to the customer profile to determine if any relationships to climate zone relates to purchase items and or returns or defects.
 
+![Picture1](https://user-images.githubusercontent.com/79305154/152256147-c20ec620-17c7-4dab-a7f5-7a2db18499f1.png)
+![Picture2](https://user-images.githubusercontent.com/79305154/152256154-4e53d69e-4e02-427b-8501-818f7e9221f5.png)
+![Picture3](https://user-images.githubusercontent.com/79305154/152256164-087fe975-4c44-4198-8928-3b004ee33457.png)
+![Picture4](https://user-images.githubusercontent.com/79305154/152256173-3b72d1dc-f021-4d39-a730-c66395b0a133.png)
+![Picture5](https://user-images.githubusercontent.com/79305154/152256182-0dd2344d-d290-48ed-97fc-39511f65af55.png)
+![Picture6](https://user-images.githubusercontent.com/79305154/152256189-485f16ce-ee73-48ee-9516-92d119987d49.png)
+
+![DAD220 Database Project](https://user-images.githubusercontent.com/79305154/152256101-308070b6-8b93-42b4-84e3-935ded3891bc.png)
 
 Reflecting on the process of enhancing and modifying this artifact, I took many steps to prepare changes to the database structure, the fields and thier attributes. During this process I made many mistakes as naming each table, the fields, the attributes, and keys needed to be hand entered. Using CAPS on commands and proper names as used from the Pseudocode/UML Chat became difficult. I found myself having to DESCRIBE and SHOW TABLES often to verify my entires, as there were times when SELECT * would not supply the required outcome, this was due to inaccurate entries on my part when creating the database and its fields. The same can be said when performing queries to pull data, using proper syntax and with the help of the README.md file created I made sure to use beest practice with my implementation of this artifact. I had fun creating the database and assigning the links to connect the data imported within the tables. The report indicates my findings, identifying where certain products have high volumes of returns. As well as vertain states that show signs of higher percentages when it comes to purchases and returns overall. While I was not able to determine if the inclusion of climate was a benefactor to higher returns. The data indicates the highest frequencies in colder climates.
-
 
 List of Enhancements performed
 1. Add new content to Database - added resource of climate to database for each state found at https://www.energy.gov/eere/buildings/downloads/zerh-tour-zero-homepage-data-table-datafile-1012019 
@@ -310,9 +317,86 @@ List of Enhancements performed
 9. Ensure Project Requirements are fulfilled and improvments support quality, efficiency, and security.
 10. Create ReadMe file and include project outcome and steps.
 	
-	
 ### Resources
 https://www.mysqltutorial.org/import-csv-file-mysql-table/
 https://www.oe.netl.doe.gov/OE417_annual_summary.aspx
 https://www.energy.gov/eere/buildings/downloads/zerh-tour-zero-homepage-data-table-datafile-1012019
+
+The skills for this artifact demonstrate an ability to employ strategies for building collaborative environments that enable diverse audiences to support organizational decision making in the field of computer science. 
+
+##### For example:
+![Picture7](https://user-images.githubusercontent.com/79305154/152256249-fe31c4fa-a7d7-48fb-9128-3dccbed909d5.png)
+
+The skills for this artifact demonstrate an ability to design, develop, and deliver professional-quality oral, written, and visual communications that are coherent, technically sound, and appropriately adapted to specific audiences and contexts.
+
+#### For example:
+![Picture9](https://user-images.githubusercontent.com/79305154/152256304-8ad527aa-035e-4656-914b-1a6c157cdb54.png)
+![Picture12](https://user-images.githubusercontent.com/79305154/152256315-1ae84a30-96e7-4146-9e48-650088c89d5e.png)
+
+The skills for this artifact demonstrate an ability to demonstrate an ability to use well-founded and innovative techniques, skills, and tools in computing practices for the purpose of implementing computer solutions that deliver value and accomplish industry-specific goals.
+
+#### For example:
+
+**// Part 1**
+From Codio Select Terminal and enter ``mysql;`` // this provides access to the server
+
+
+**//Part 2**
+![Picture1](https://user-images.githubusercontent.com/79305154/152242549-290ff09c-2bc5-4cfc-a7a5-8410ba6d50f2.png)
+``SHOW DATABASES;`` // perform this action to show a list of all databases
+
+
+**// Part 3**
+``CREATE DATABASE Capstone22;`` // perform this action to create a new database, name the database as desired
+
+
+**//Part 4**
+``USE Capstone22;``	// perform this action to select the database for CRUD actions
+
+
+**//Part 5**
+// create Customers table and fields
+
+``CREATE TABLE Customers (
+  CustomerID INT,
+  FirstName VARCHAR(25),
+  LastName VARCHAR(25),
+  Street VARCHAR(50),
+  City VARCHAR(50),
+  State VARCHAR(25),
+  Climate VARCHAR(25),
+  ZipCode INT,
+  Telephone VARCHAR(15),
+  PRIMARY KEY(CustomerID)
+);``
+
+// create Orders table and fields
+
+``CREATE TABLE Orders (
+  OrderID INT,
+  CustomerID INT,
+  SKU VARCHAR(20),
+  Description VARCHAR(50),
+  PRIMARY KEY(OrderID)
+);``
+
+//create RMA table and fields
+
+``CREATE TABLE RMA (
+  RMAID INT,
+  OrderID INT,
+  Reason VARCHAR(25),
+  Status VARCHAR(50),
+  Step VARCHAR(15),
+  PRIMARY KEY(RMAID)
+);``
+
+//create Climate table and fields
+
+``CREATE TABLE Clstate (
+  City VARCHAR(50),
+  State VARCHAR(25),
+  Climate VARCHAR(25)
+);``
+
 
