@@ -282,3 +282,4 @@ As a result, I have an Encryption_File application that adheres to coding standa
 ## Databases: Artifact 3 RMA_Orders Database 
 ![database](https://user-images.githubusercontent.com/79305154/151717149-6b7ef30f-c831-4c72-8013-c9862d182d02.jpg)
 
+I have chosen to select artifact RMA_Orders Database. The artifact originates from course DAD220 Intro to Structured Databases and uses MySQL to perform CRUD actions. The goal of this artifact is to showcase how a software engineer uses existing information to formulate a new database and extracts usable data to generate an accurate report based on any findings and analysis. Once the data is imported, the information is used to provide the client with a report identifying sales to better manage the equipment distributed to customers and any returns or defects.
