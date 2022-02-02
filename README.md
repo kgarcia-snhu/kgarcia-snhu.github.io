@@ -286,5 +286,7 @@ I have chosen to select artifact RMA_Orders Database. The artifact originates fr
 
 * The enhancement plan includes updates to improve the efficiency of the artifact by incorporating advanced concepts of MySQL and using proper syntax. Datamining will take place by preparing the database to import multiple CSV files. The data will then have attributes linked to then be extracted and sorted by specific parameters to identify frequencies for overall sales. Performing the planned improvements provides the ability to achieve the desired outcome to import raw data that can be filtered, sorted, and linked according to tables and the variables they may share.
  
-* I plan to edit the CSV files and find areas to enhance the functionality of the reports for the project. While improving code by checking for code clarity, consistency, design, features, and coding standard use. I also plan to create a ReadMe.txt file and review naming conventions for readability in database tables, attributes, and variables. 
+* I plan to edit the CSV files and find areas to enhance the functionality of the reports for the project. While improving code by checking for code clarity, consistency, design, features, and coding standard use. I also plan to create a ReadMe.txt file and review naming conventions for readability in database tables, attributes, and variables.
+
+I selected this artifact as I beleive that
 
