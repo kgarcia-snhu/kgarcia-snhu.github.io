@@ -290,3 +290,18 @@ I have chosen to select artifact RMA_Orders Database. The artifact originates fr
 
 I selected this artifact as I believe by using sources of data formatted in Comma-Separated Values provides a simple form to create a useful database. Once the data is selected, within SQL the database must be created, then the tables associated with the source file are created. The data is then imported into the SQL database and the attributes necessary to link the rows of data help to connect the relationships between each table. For this artifact, I chose to add data from the https://www.oe.netl.doe.gov/OE417_annual_summary.aspx. Here I was able to locate a CSV file that listed the climate zones for each city and state. This information will be added to the database and linked to the customer profile to determine if any relationships to climate zone relate to purchase items and or returns or defects.
 
+List of Enhancements performed
+2. Pseudocode descriptions and layout structure have been updated to align with the program functionality.
+3. Verified formatting, date, spacing, tabs, line breaks, curly braces, and brackets.
+4. Reviewed considerations of whitespace, removing unnecessary spacing.
+5. Ensured naming conventions of fields/constants/variables/parameters/classes/libraries clear and meaningful.
+6. Ensure Project Requirements are fulfilled and improvments support quality, efficiency, and security.
+7. Create ReadMe file and include project outcome and steps.
+8. Cleaned data within the csv files: 
+	From customers, removed (-) from phone numbers, 98868 updates were applied.
+	From customers, fixed State listing for formatting.
+	From customers. added NULL to empty phone listings.
+	From climate by state, fixed State listing for formatting.
+	From climate by state, added NULL to empty city and climate listings.
+	
+Resource - https://www.mysqltutorial.org/import-csv-file-mysql-table/	
