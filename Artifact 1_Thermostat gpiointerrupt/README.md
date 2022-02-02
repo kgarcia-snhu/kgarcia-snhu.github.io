@@ -4,6 +4,10 @@
 ### Summarize the project and what problem it was solving?
 The thermostat supports the peripherals of I2C by reading the TMP006 temperature sensor, the peripherals of GPIO by activating a LED to indicate the output to the thermostat where LED on = heat on and LED off = heat off, and the UART peripherals by simulating data being sent to the server which can be viewed from the terminal Com3 echo characters written for <30,26,0,0339> <temperature(30), setpoint(26), heat(0), seconds>. When looking into the uses for hardware architecture of Texas Instruments, Microchip, and Freescale. I found that Texas Instruments Real-Time Microcontrollers are of lower cost and provide a diverse amount of implementation due to the 32bit configuration and amount of pins (38 pins). The Freescale architecture is intended to be used more for wireless applications like broadband routers, lowering power consumption yet increasing performance while using a single chip. The Microchip architecture contains a larger flash and ram capacity, uses a lower bit count, and includes (RTCC) for clock and calendar functions. The microchip performs well with integrated touch functionality for LCD displays. (Design News, 2017) To create a smart thermostat using the TI board, my recommendation is to use a Freescale architecture. The TI board CC3220S is a single-chip wireless MCU with 0MB of flash memory, 256kb of RAM, Arm Cortex M4 processor at 80Mhz. This prototype is developed to showcase how the CC3220S board can act as a thermostat accessing a temperature sensor (TMP006) to read the room temp (via I2C) degrees Celsius. Simulating data transfer to the server via terminal from the Com port (via UART) and indicate if the heating system is on or off by displaying a led light (via GPIO) when the temperature is different than the setpoint. The SysTec’s thermostat architecture must have enough Flash and RAM to support the code and performance. Therefore, I believe that a Freescale architecture for a thermostat would resemble a Google Nest device. This architecture is geared towards wireless connectivity allowing access to the thermostat from mobile applications, containing limited functionality on the device as settings are controlled wirelessly. Regarding the other styles of architecture, a microchip architecture for a thermostat would resemble an older style of a temperature control unit that uses analog input like a dial and has no LCD display. A TI architecture would resemble a Honeywell digital thermostat that provides the user with input by digital buttons and contains an LCD display showcasing settings, option menus, and alerts.
 
+![CC3220S LaunchPad2](https://user-images.githubusercontent.com/79305154/152251926-04607358-0096-42d2-8d36-1f73e6373a1c.JPG)
+![Temp Sensor Location](https://user-images.githubusercontent.com/79305154/152252159-cd4dd31f-a634-4fbf-8c45-b6078762b875.png)
+
+
 /* ========== Summary ========== */
 
 Application that toggles an LED(s) using a GPIO pin interrupt.
@@ -30,6 +34,7 @@ Run the example. CONFIG_GPIO_LED_0 turns ON to indicate driver initialization is
 CONFIG_GPIO_LED_0 is toggled by pushing CONFIG_GPIO_BUTTON_0.
 
 CONFIG_GPIO_LED_1 is toggled by pushing CONFIG_GPIO_BUTTON_1.
+![Setpoint Buttons](https://user-images.githubusercontent.com/79305154/152252009-628dd65b-d38a-4864-904e-12e032a25ac6.png)
 
 Application Design Details
 The gpioButtonFxn0/1 functions are configured in the driver configuration file. These functions are called in the context of the GPIO interrupt.
