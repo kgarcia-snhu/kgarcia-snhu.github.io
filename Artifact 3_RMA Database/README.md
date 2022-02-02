@@ -27,23 +27,20 @@ https://www.oe.netl.doe.gov/OE417_annual_summary.aspx
 https://www.energy.gov/eere/buildings/downloads/zerh-tour-zero-homepage-data-table-datafile-1012019
 
 // Part 1
-From Codio Select Terminal and enter mysql; // this provides access to the server
-
+From Codio Select Terminal and enter ``mysql; // this provides access to the server``
 
 //Part 2
-SHOW DATABASES; // perform this action to show a list of all databases
 ![Picture1](https://user-images.githubusercontent.com/79305154/152242549-290ff09c-2bc5-4cfc-a7a5-8410ba6d50f2.png)
+``SHOW DATABASES; // perform this action to show a list of all databases``
 
 // Part 3
-CREATE DATABASE Capstone22; // perform this action to create a new database, name the database as desired
-
+``CREATE DATABASE Capstone22; // perform this action to create a new database, name the database as desired``
 
 //Part 4
-USE Capstone22;	// perform this action to select the database for CRUD actions
-
+``USE Capstone22;	// perform this action to select the database for CRUD actions``
 
 //Part 5
-// create Customers table and fields
+``// create Customers table and fields
 CREATE TABLE Customers (
   CustomerID INT,
   FirstName VARCHAR(25),
@@ -87,29 +84,25 @@ ALTER TABLE Orders
   ADD FOREIGN KEY(CustomerID) REFERENCES Customers(CustomerID);		// link tables and thier rows to the CustomerID attribute
   
 ALTER TABLE RMA
-  ADD FOREIGN KEY(OrderID) REFERENCES Orders(OrderID);			// link tables and thier rows to the OrderID attribute
+  ADD FOREIGN KEY(OrderID) REFERENCES Orders(OrderID);			// link tables and thier rows to the OrderID attribute``
 
-SHOW TABLES;      // shows tables created
 ![Picture2](https://user-images.githubusercontent.com/79305154/152242755-66f98cff-af35-40fb-8eed-7f0fb42a923e.png)
+``SHOW TABLES;      // shows tables created``
 
-DESCRIBE Customers;   // list Customers table fields
 ![Picture3](https://user-images.githubusercontent.com/79305154/152242990-d5867631-8a23-412c-830a-3b5b4d01c2f0.png)
+``DESCRIBE Customers;   // list Customers table fields``
 
-
-DESCRIBE Orders;      // list Orders table fields
 ![Picture4](https://user-images.githubusercontent.com/79305154/152242977-02a7d57c-d69a-4d76-a868-f6862f72e7d9.png)
+``DESCRIBE Orders;      // list Orders table fields``
 
-
-DESCRIBE RMA;         // list RMA table fields
 ![Picture5](https://user-images.githubusercontent.com/79305154/152242965-e4257715-f145-4307-96cc-d36530ee3a4a.png)
+``DESCRIBE RMA;         // list RMA table fields``
 
-
-DESCRIBE Climate;     // list Climate table fields
 ![Picture6](https://user-images.githubusercontent.com/79305154/152242937-59cf6f1e-720d-47a3-a933-5e6bc9755bcf.png)
-
+``DESCRIBE Climate;     // list Climate table fields``
 
 // Part 6 
-mkdir output			// creates output folder
+``mkdir output			// creates output folder
 sudo chown mysql:mysql output	// links output when creating outfiles
 
 // loads csv file into Capstone22 Database tables selected(Customers)	
@@ -138,12 +131,12 @@ LOAD DATA INFILE '/home/codio/workspace/Capstone/climate by state.csv'
 INTO TABLE Clstate
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
-LINES TERMINATED BY '\n';						// prompted Query OK, 246 rows affected (0.01 sec)
+LINES TERMINATED BY '\n';						// prompted Query OK, 246 rows affected (0.01 sec)``
 
 
 // Part 7
 
-// test records for the state of Massachusetts limit ten
+``// test records for the state of Massachusetts limit ten
 SELECT COUNT(*)
   FROM Customers INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
   WHERE UPPER(Customers.state) =    'MASSACHUSETTS';
@@ -167,7 +160,7 @@ SELECT COUNT(*)
 SELECT Orders.OrderID, Orders.CustomerID, Orders.SKU, Orders.Description, Customers.City, Customers.State, Customers.Climate, RMA.Reason, RMA.Status
   FROM Customers INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID 
   INNER JOIN RMA ON Orders.OrderID = RMA.OrderID
-Limit 50;
+Limit 50;``
 ![Picture7](https://user-images.githubusercontent.com/79305154/152243187-e4da864c-2e59-4a0e-a42d-491c97ef0934.png)
 
 
