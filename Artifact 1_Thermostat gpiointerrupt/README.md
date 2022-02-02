@@ -26,7 +26,8 @@ If you're using an IDE such as Code Composer Studio (CCS) or IAR, please refer t
 
 The Board.html can also be found in your SDK installation:
 
-    <SDK_INSTALL_DIR>/source/ti/boards/<BOARD>
+<SDK_INSTALL_DIR>/source/ti/boards/<BOARD>
+    
 /* ========== Example Usage ========== */
 
 Run the example. CONFIG_GPIO_LED_0 turns ON to indicate driver initialization is complete.
@@ -49,17 +50,18 @@ When building in Code Composer Studio, the configuration project will be importe
 FreeRTOS:
 
 Please view the FreeRTOSConfig.h header file for example configuration information.
+
 /* ========== Headers ========== */
 
-/* Driver Header file */ #include <ti/drivers/GPIO.h>
+/* Driver Header file */ ``#include <ti/drivers/GPIO.h>``
 
-/* Driver configuration */ #include "ti_drivers_config.h"
+/* Driver configuration */ ``#include "ti_drivers_config.h"``
 
-/* Timer header file */ #include <ti/drivers/Timer.h>
+/* Timer header file */ ``#include <ti/drivers/Timer.h>``
 
-/* I2C header file */ #include <ti/drivers/I2C.h>
+/* I2C header file */ ``#include <ti/drivers/I2C.h>``
 
-/* UART header file */ #include <ti/drivers/UART.h>
+/* UART header file */ ``#include <ti/drivers/UART.h>``
 
 /* ========== UART Driver Params ========== */
 
@@ -67,8 +69,8 @@ Please view the FreeRTOSConfig.h header file for example configuration informati
 
 // Driver Handles - Global variables UART_Handle uart;
 
-``void initUART(void) { UART_Params uartParams;
-
+``void initUART(void) { 
+UART_Params uartParams;
 UART_init();
 
 // Configure the driver
@@ -88,32 +90,32 @@ if (uart == NULL) {
 
 /* ========== I2C Driver Params ========== */
 
-`` I2C Global Variables static const struct { uint8_t address; uint8_t resultReg; char *id; } sensors[3] = { { 0x48, 0x0000, "11X" }, { 0x49, 0x0000, "116" }, { 0x41, 0x0001, "006" } };
+``I2C Global Variables static const struct { uint8_t address; uint8_t resultReg; char *id; } sensors[3] = { { 0x48, 0x0000, "11X" }, { 0x49, 0x0000, "116" }, { 0x41, 0x0001, "006" } };``
 
-uint8_t txBuffer[1]; uint8_t rxBuffer[2]; I2C_Transaction i2cTransaction;
+``uint8_t txBuffer[1]; uint8_t rxBuffer[2]; I2C_Transaction i2cTransaction;``
 
 // Driver Handles - Global variables I2C_Handle i2c;
 
 // Make sure you call initUART() before calling this function. void initI2C(void) { int8_t i, found; I2C_Params i2cParams;
 
-DISPLAY(snprintf(output, 64, "Initializing I2C Driver - "))
+``DISPLAY(snprintf(output, 64, "Initializing I2C Driver - "))``
 
 // Init the driver
-I2C_init();
+``I2C_init();``
 
 // Configure the driver
-I2C_Params_init(&i2cParams);
-i2cParams.bitRate = I2C_400kHz;
+``I2C_Params_init(&i2cParams);
+i2cParams.bitRate = I2C_400kHz;``
 
 // Open the driver
-i2c = I2C_open(CONFIG_I2C_0, &i2cParams);
+``i2c = I2C_open(CONFIG_I2C_0, &i2cParams);
 if (i2c == NULL)
 {
     DISPLAY(snprintf(output, 64, "Failed\n\r"))
     while (1);
-}
+}``
 
-DISPLAY(snprintf(output, 32, "Passed\n\r"))
+``DISPLAY(snprintf(output, 32, "Passed\n\r"))``
 
 // Boards were shipped with different sensors.
 // Welcome to the world of embedded systems.
@@ -121,12 +123,12 @@ DISPLAY(snprintf(output, 32, "Passed\n\r"))
 // Scan through the possible sensor addresses
 
 /* Common I2C transaction setup */
-i2cTransaction.writeBuf = txBuffer;
+``i2cTransaction.writeBuf = txBuffer;
 i2cTransaction.writeCount = 1;
 i2cTransaction.readBuf = rxBuffer;
-i2cTransaction.readCount = 0;
+i2cTransaction.readCount = 0;``
 
-found = false;
+``found = false;
 for (i = 0; i < 3; ++i)
 {
     i2cTransaction.slaveAddress = sensors[i].address;
@@ -140,17 +142,17 @@ if (I2C_transfer(i2c, &i2cTransaction))
     break;
     }
     DISPLAY(snprintf(output, 64, "No\n\r"))
-}
+}``
 
-if(found)
+``if(found)
 {
     DISPLAY(snprintf(output, 64, "Detected TMP%s I2C address: %x\n\r", sensors[i].id, i2cTransaction.slaveAddress))
 } else {
     DISPLAY(snprintf(output, 64, "Temperature sensor not found, contact professor\n\r"))
 }
-}
+}``
 
-int16_t readTemp(void) { int j; int16_t temperature = 0;
+``int16_t readTemp(void) { int j; int16_t temperature = 0;
 
 i2cTransaction.readCount = 2;
 if (I2C_transfer(i2c, &i2cTransaction))
@@ -180,35 +182,34 @@ return temperature;
 
 // Driver Handles - Global variables Timer_Handle timer0;
 
-void timerCallback(Timer_Handle myHandle, int_fast16_t status) { /* Raise timer flag */ TimerFlag = 1; }
+``void timerCallback(Timer_Handle myHandle, int_fast16_t status) { /* Raise timer flag */ TimerFlag = 1; }``
 
 /*
 
 Initialize Timer and set Params */
-void initTimer(void) { //Timer_Handle timer0; Timer_Params params;
+``void initTimer(void) { //Timer_Handle timer0; Timer_Params params;``
 
 /* Init the driver */
-Timer_init();
+``Timer_init();``
 
 /* Configure the driver */
-Timer_Params_init(&params);
+``Timer_Params_init(&params);
 params.period = 100000; // 100ms = 100000us used for temperature, setpoint, and heat 200ms, 500ms, 1000ms default 1000000 or 1sec
 params.periodUnits = Timer_PERIOD_US;
 params.timerMode = Timer_CONTINUOUS_CALLBACK;
-params.timerCallback = timerCallback;
+params.timerCallback = timerCallback;``
 
 // Open the driver
-timer0 = Timer_open(CONFIG_TIMER_0, &params);
+``timer0 = Timer_open(CONFIG_TIMER_0, &params);``
 
-if (timer0 == NULL) {
+``if (timer0 == NULL) {
     /* Failed to initialized timer */
     while (1) {}
 }
-
 if (Timer_start(timer0) == Timer_STATUS_ERROR) {
     /* Failed to start timer */
     while (1) {}
-}
+}''
 }
 
 /* ======== gpioButtonFxn0 ========
