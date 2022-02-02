@@ -173,4 +173,5 @@ Limit 50;
 
 // Part 8
 
-// review the data, based off of the findings, by adding an additional layer of demografics to showcase the climate of each state, the information indicates that a high volume of equipment returns have taken place from the state of Massachusetts. The return amount ranges at 4000 returns, compared to rououghly 2000 or less from other states. The climate data that was imported indicates the the state of Massachusetts is cold. This factor may have something to do with the high volume of returns for this state compared to all other states like Califormiona that is hot and dry most of the year.
+// review the data 
+Based on the findings, by adding an additional layer of demographics to showcase the climate of each state, the information indicates that a high volume of equipment returns has taken place from the state of Massachusetts. The return amount ranges at 4000 returns, compared to roughly 2000 or less from other states. The climate data that was imported indicates that the state of Massachusetts is cold. This factor may have something to do with the high volume of returns for this state compared to all other states like California which is hot and dry most of the year.
