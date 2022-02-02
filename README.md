@@ -288,5 +288,5 @@ I have chosen to select artifact RMA_Orders Database. The artifact originates fr
  
 * I plan to edit the CSV files and find areas to enhance the functionality of the reports for the project. While improving code by checking for code clarity, consistency, design, features, and coding standard use. I also plan to create a ReadMe.txt file and review naming conventions for readability in database tables, attributes, and variables.
 
-I selected this artifact as I beleive that
+I selected this artifact as I believe by using sources of data formatted in Comma-Separated Values provides a simple form to create a useful database. Once the data is selected, within SQL the database must be created, then the tables associated with the source file are created. The data is then imported into the SQL database and the attributes necessary to link the rows of data help to connect the relationships between each table. For this artifact, I chose to add data from the https://www.oe.netl.doe.gov/OE417_annual_summary.aspx. Here I was able to locate a CSV file that listed the climate zones for each city and state. This information will be added to the database and linked to the customer profile to determine if any relationships to climate zone relate to purchase items and or returns or defects.
 
