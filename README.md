@@ -329,9 +329,6 @@ The skills for this artifact demonstrate an ability to employ strategies for bui
 
 The skills for this artifact demonstrate an ability to design, develop, and deliver professional-quality oral, written, and visual communications that are coherent, technically sound, and appropriately adapted to specific audiences and contexts.
 
-#### For example:
-![Picture9](https://user-images.githubusercontent.com/79305154/152256304-8ad527aa-035e-4656-914b-1a6c157cdb54.png)
-![Picture12](https://user-images.githubusercontent.com/79305154/152256315-1ae84a30-96e7-4146-9e48-650088c89d5e.png)
 
 The skills for this artifact demonstrate an ability to demonstrate an ability to use well-founded and innovative techniques, skills, and tools in computing practices for the purpose of implementing computer solutions that deliver value and accomplish industry-specific goals.
 
