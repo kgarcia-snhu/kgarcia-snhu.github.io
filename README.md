@@ -306,12 +306,12 @@ List of Enhancements performed
 1. Add new content to Database - added resource of climate to database for each state found at https://www.energy.gov/eere/buildings/downloads/zerh-tour-zero-homepage-data-table-datafile-1012019 
 2. Pseudocode descriptions/ UML Chart and layout structure have been updated to align with the program functionality.
 3. Cleaned data within the csv files:
-	From customers, removed (-) from phone numbers, 98868 updates were applied.
-	From customers, fixed State listing for formatting.
-	From customers. added NULL to empty phone listings.
-	From climate by state, fixed State listing for formatting.
-	From climate by state, added NULL to empty city and climate listings.
-	Mapped Climate data to Customer Table, updated state from abbreviation to state name.
+	- From customers, removed (-) from phone numbers, 98868 updates were applied.
+	- From customers, fixed State listing for formatting.
+	- From customers. added NULL to empty phone listings.
+	- From climate by state, fixed State listing for formatting.
+	- From climate by state, added NULL to empty city and climate listings.
+	- Mapped Climate data to Customer Table, updated state from abbreviation to state name.
 6. Verified formatting, date, spacing, tabs, line breaks, curly braces, and brackets.
 7. Reviewed considerations of whitespace, removing unnecessary spacing.
 8. Ensured naming conventions of fields/constants/variables/parameters/classes/libraries clear and meaningful.
