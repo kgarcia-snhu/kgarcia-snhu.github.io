@@ -305,7 +305,7 @@ Reflecting on the process of enhancing and modifying this artifact, I took many 
 List of Enhancements performed
 1. Add new content to Database - added resource of climate to database for each state found at https://www.energy.gov/eere/buildings/downloads/zerh-tour-zero-homepage-data-table-datafile-1012019 
 2. Pseudocode descriptions/ UML Chart and layout structure have been updated to align with the program functionality.
-3. Cleaned data within the csv files: From customers, removed (-) from phone numbers, 98868 updates were applied.
+3. Cleaned data within the csv files:
 	From customers, removed (-) from phone numbers, 98868 updates were applied.
 	From customers, fixed State listing for formatting.
 	From customers. added NULL to empty phone listings.
