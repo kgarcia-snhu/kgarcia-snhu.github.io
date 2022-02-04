@@ -196,8 +196,8 @@ List of Enhancements performed
  13. Edit existing drivers - Update changes to existing drivers based on parameters set.
  14. Remove non-functional drivers - Remove non-functional drivers, as some share the same pins and cause the project to fail.
  15. Ensure functions have the variables that support them declared nearby - Relocate declarations above where the function is called.
- 16. Ensure Project Requirements are fulfilled and improvements support quality, efficiency, and security.
- 17. Create ReadMe file and include project outcome and steps.
+ 16. Ensure artifact requirements are fulfilled and improvements support quality, efficiency, and security.
+ 17. Create ReadMe file and include artifact outcome and steps.
 
 The skills for this artifact demonstrate an ability to use well-founded and innovative techniques, skills, and tools in computing practices for the purpose of implementing computer solutions that deliver value and accomplish industry-specific goals in software engineering and design. In an effort to create industry-standard software design, Code Composer was used to create a template of drivers and resources. Additional settings and configurations helped to develop software functionality that is free of errors. I have added comments where necessary within codes to adhere to best practices. I have made an effort to not over comment on items of this project, as a result, redundancies have been removed. I have ensured that there are no errors in logic, using correct loops, branches, and nesting. That loops and cases include defaults to protect the programs functionality. By developing code and determining the proper settings and resources used, the code developed is more robust and efficient, delivering value and accomplishing industry-specific goals.
 
@@ -235,8 +235,8 @@ List of Enhancements performed
  6. Ensured naming conventions of fields/constants/variables/parameters/classes/libraries clear and meaningful.
  7. Removed excess commenting - Over commenting, while useful can lead to distractions or large files.
  8. Added commenting to functionality - Provide necessary comments to specific functions required.
- 9. Ensure Project Requirements are fulfilled and improvements support quality, efficiency, and security.
- 10. Create ReadMe file and include project outcome and steps. This is a project where I had to create a README file as one did not exist.
+ 9. Ensure artifact requirements are fulfilled and improvements support quality, efficiency, and security.
+ 10. Create ReadMe file and include artifact outcome and steps.
 
 The skills for this artifact demonstrate an ability to develop a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources. Initially, I had issues with the program accessing the inputdatafile.txt file. When trying to read the file Microsoft Visual Studio prompted an error that the file was not found. After researching online, I found that in order to access external files, MVS requires the file to be embedded within the source folder location. By doing this, I was able to find a solution to address potential design flaws in software, but wonder how other projects tackle issues of the same matter for encryption? By embedding the file, the encrypt_decrypt function key was used at each value to output values saved. I routinely placed sections in code to output the values of strings to determine what is being written as a check and balance. 
 
@@ -313,8 +313,8 @@ List of Enhancements performed
 6. Verified formatting, date, spacing, tabs, line breaks, curly braces, and brackets.
 7. Reviewed considerations of whitespace, removing unnecessary spacing.
 8. Ensured naming conventions of fields/constants/variables/parameters/classes/libraries clear and meaningful.
-9. Ensure Project Requirements are fulfilled and improvements support quality, efficiency, and security.
-10. Create ReadMe file and include project outcome and steps.
+9. Ensure artifact requirements are fulfilled and improvements support quality, efficiency, and security.
+10. Create ReadMe file and include artifact outcome and steps.
 	
 #### Resources
 - https://www.mysqltutorial.org/import-csv-file-mysql-table/
