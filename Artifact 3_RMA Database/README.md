@@ -14,6 +14,10 @@ https://www.oe.netl.doe.gov/OE417_annual_summary.aspx
 https://www.energy.gov/eere/buildings/downloads/zerh-tour-zero-homepage-data-table-datafile-1012019
 
 
+#### Pseudocode
+![DAD220 RMA_Database Pseudocode](https://user-images.githubusercontent.com/79305154/152487295-aba28941-a414-4974-a577-4f65622f5739.png)
+
+
 **// Part 1**
 From Codio Select Terminal and enter ``mysql;`` // this provides access to the server
 
