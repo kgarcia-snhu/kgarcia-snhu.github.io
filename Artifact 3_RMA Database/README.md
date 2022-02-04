@@ -74,7 +74,7 @@ From Codio Select Terminal and enter ``mysql;`` // this provides access to the s
 
 //create Climate table and fields
 
-``CREATE TABLE Clstate (
+``CREATE TABLE Climate (
   City VARCHAR(50),
   State VARCHAR(25),
   Climate VARCHAR(25)
