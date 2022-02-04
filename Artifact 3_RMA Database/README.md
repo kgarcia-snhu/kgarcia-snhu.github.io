@@ -138,7 +138,7 @@ LINES TERMINATED BY '\n';``						// prompted Query OK, 100000 rows affected, 655
 // loads csv file into Capstone22 Database tables selected(Climate)
 
 ``LOAD DATA INFILE '/home/codio/workspace/Capstone/climate by state.csv'
-INTO TABLE Clstate
+INTO TABLE Climate
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n';``						// prompted Query OK, 246 rows affected (0.01 sec)``
