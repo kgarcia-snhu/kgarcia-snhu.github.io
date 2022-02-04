@@ -12,7 +12,7 @@ My name is Keone, best pronounced as (Ke Own E). I continue to hold the Presiden
 4. Algorithms and Data Structure: Artifact 2 Encryption File Enhancement
 5. Databases: Artifact 3 RMA_Orders Database Enhancement 
 
-## Professional Self-Assessment
+## 1. Professional Self-Assessment
 I’ve been in the computer science program since January of 2018, putting me at 4 years to complete my degree. While in the program, I have learned that there are many applications for hardware and software to co-exist. When building a computer to meet the needs of a client; cost, performance, and limitations are considered to provide the best possible outcome. When developing code, security policies are used to ensure that code written relinquishes bugs, vulnerabilities, and data loss. Within the computer science program, having the ability to work with diverse programming languages along with comments in code are good practice, and provides avenues to reverse engineer software.
 
 As a first-generation dual major working towards a BSCS and BSDA, I aim to work as a software engineer and a data analyst/scientist. To outline my career goals in computer science, I would like to share projections from careers at www.computerscience.org. From “the Bureau of Labor Statistics (BLS) projects jobs for computer and information technology occupations will grow significantly — an 11% increase — from 2019 to 2029. This is significantly faster than the projected growth rate for all occupations nationwide. Some computer science jobs, such as computer and information research scientists, are projected to grow even more quickly.” (Red Ventures, 2022)
@@ -23,7 +23,11 @@ I know that I enjoy what software engineering affords with creating, editing, an
 Red Ventures, C. (2022, January 12). Compare top careers in computer science. Get an Education the World Needs. ComputerScience.org. Retrieved January 30, 2022, from
 [https://www.computerscience.org/careers/](https://www.computerscience.org/careers/)
 
-## Code Review
+* A. Discuss how completing your coursework throughout the program and developing the ePortfolio has helped showcased your strengths and shape your professional goals and values and prepared you to either enter or become more employable in the computer science field. Use specific examples from your program and include examples outside of the artifacts included in your ePortfolio. Please address following topics: collaborating in a team environment, communicating to stakeholders, data structures and algorithms, software engineering and database, and security. Note: This should function as an overall introduction to your skills and you will become more specific relative to the included artifacts in the next section.
+
+* B. Summarize/introduce how your artifacts fit together and inform the portfolio as a whole; this will help demonstrate the full range of your computer science talents and abilities? This section should introduce your audience to the technical artifacts that will follow the professional self-assessment.
+
+## 2. Code Review
 Provided is a link to my Code Review video where I address Existing Functionality, Code Analysis, and Enhancements planned.
 - link to code review video - [Code Review Video](https://www.screencast.com/t/u37vPUqJPSo)
 - link to script - [Code Review Script.pdf](https://github.com/kgarcia-snhu/kgarcia-snhu.github.io/files/7956249/Code.Review.Script.pdf)
@@ -32,7 +36,7 @@ Provided is a link to my Code Review video where I address Existing Functionalit
  2. Code Analysis: A review of code structure, commenting, efficiencies, and an explanation of findings.
  3. Enhancements: A walk through of enhancements planned and an explanation of execution or limitations.
 
-## Software Design and Engineering: Artifact 1 Thermostat Lab Enhancement
+## 3. Software Design and Engineering: Artifact 1 Thermostat Lab Enhancement
 ![CC3220S LaunchPad2](https://user-images.githubusercontent.com/79305154/151455474-1afa7d76-0b53-4522-8b75-0416d99671e1.JPG)
 
 I have chosen to select the artifact Thermostat Lab. The artifact originates from course CS350 Emerging Systems and uses Code Composer Studio with a Simple Link CC3220S Launchpad in C language. The goal of this artifact is to utilize components of the launchpad to simulate a working thermostat for an HVAC system. Indicating when the unit is active using an LED, while providing an output of sensor readings and setpoint parameters sent to be viewed on a mobile app.
@@ -202,7 +206,7 @@ This artifact demonstrates the ability to design and evaluate computing solution
 Although I would have preferred that the cool and heat functions had their own dedicated LED output of Red, Green, or Yellow. By maintaining access to the drivers of UART, I2C, the project is able to read the temperature output and record the temperature, setpoint, heat, cool, and seconds parameters. As a result, I have a Thermostat Application that adheres to coding standards, best practices, and illustrates the programming skills that have matured through my education at Southern New Hampshire University as a Computer Science, Software Engineering student.
 
 
-## Algorithms and Data Structure: Artifact 2 Encryption File Enhancement
+## 4. Algorithms and Data Structure: Artifact 2 Encryption File Enhancement
 ![free-encryption](https://user-images.githubusercontent.com/79305154/151493285-aba0dc07-24e5-49bc-b772-884ad848b286.jpg)
 
 I have chosen to select the artifact Encryption_File. The artifact originates from course CS405 Secure Coding and uses Microsoft Visual Studio in C++ language. The goal of this artifact is to showcase a secure transfer of data from one location to another. Mitigating errors in accessing an encrypted file and outputting the contents into a new file using an encryption key. 
@@ -280,7 +284,7 @@ This artifact demonstrates an ability to use well-founded and innovative techniq
 As a result, I have an Encryption_File application that adheres to coding standards, best practices, and illustrates the programming skills that have matured through my education at SNHU as a Computer Science software engineering student.
 
 
-## Databases: Artifact 3 RMA_Orders Database 
+## 5. Databases: Artifact 3 RMA_Orders Database 
 ![database](https://user-images.githubusercontent.com/79305154/151717149-6b7ef30f-c831-4c72-8013-c9862d182d02.jpg)
 
 I have chosen to select artifact RMA_Orders Database. The artifact originates from course DAD220 Intro to Structured Databases and uses MySQL to perform CRUD actions. The goal of this artifact is to showcase how a software engineer uses existing information to formulate a new database and extracts usable data to generate an accurate report based on any findings and analysis. Once the data is imported, the information is used to provide the client with a report identifying sales to better manage the equipment distributed to customers and any returns or defects.
