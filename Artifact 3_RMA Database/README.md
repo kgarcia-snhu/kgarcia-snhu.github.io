@@ -6,23 +6,8 @@ Data is unorganised and undefined facts, the information collected from the data
 
 The artifact focuses on how a software engineer uses existing information to formulate a new database and extracts usable data to generate an accurate report based on any findings and analysis. Once the data is imported, the information is used to provide the client with a report identifying sales to better manage the equipment distributed to customers and any returns or defects.
 
-* The enhancement plan includes updates to improve the efficiency of the artifact by incorporating advanced concepts of MySQL and using proper syntax. Datamining will take place by preparing the database to import multiple CSV files. The data will then have attributes linked to then be extracted and sorted by specific parameters to identify frequencies for overall sales. Performing the planned improvements provides the ability to achieve the desired outcome to import raw data that can be filtered, sorted, and linked according to tables and the variables they may share.
+For this artifact data has been imported from the https://www.energy.gov/eere/buildings/downloads/zerh-tour-zero-homepage-data-table-datafile-1012019. The CSV file lists the climate zones for each city and state. This information will be added to the database and linked to the customer profile to determine if any relationships to climate zone relate to purchase items and or returns or defects.
  
-* I plan to edit the CSV files and find areas to enhance the functionality of the reports for the project. While improving code by checking for code clarity, consistency, design, features, and coding standard use. I also plan to create a ReadMe.txt file and review naming conventions for readability in database tables, attributes, and variables.
-
-I selected this artifact as I believe by using sources of data formatted in Comma-Separated Values provides a simple form to create a useful database. Once the data is selected, within SQL the database must be created, then the tables associated with the source file are created. The data is then imported into the SQL database and the attributes necessary to link the rows of data help to connect the relationships between each table. For this artifact, I chose to add data from the https://www.oe.netl.doe.gov/OE417_annual_summary.aspx. Here I was able to locate a CSV file that listed the climate zones for each city and state. This information will be added to the database and linked to the customer profile to determine if any relationships to climate zone relate to purchase items and or returns or defects.
-
-List of Enhancements performed
-1. Add new content to Database - added resource of climate to database for each state found at https://www.energy.gov/eere/buildings/downloads/zerh-tour-zero-homepage-data-table-datafile-1012019 
-2. Cleaned data within the csv files: From customers, removed (-) from phone numbers, 98868 updates were applied.
-3. Pseudocode descriptions or UML Charts and layout structure have been updated to align with the program functionality.
-4. Verified formatting, date, spacing, tabs, line breaks, curly braces, and brackets.
-5. Reviewed considerations of whitespace, removing unnecessary spacing.
-6. Ensured naming conventions of fields/constants/variables/parameters/classes/libraries clear and meaningful.
-7. Ensure Project Requirements are fulfilled and improvments support quality, efficiency, and security.
-8. Create ReadMe file and include project outcome and steps.
-
-
 ### Resources
 https://www.mysqltutorial.org/import-csv-file-mysql-table/
 https://www.oe.netl.doe.gov/OE417_annual_summary.aspx
