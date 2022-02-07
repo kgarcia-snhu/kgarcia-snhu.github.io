@@ -8,7 +8,7 @@ Secure coding is software development that defends against active security threa
 The artifact is focused on best practices covering secure coding in C/C++. Providing skills necessary to identify and prevent software vulnerabilities found in insecure code. The objective of this project is to give a solid foundation in developing secure software and creating policies and standards to make the principles predictable and repeatable.
 
 Specific to Encryption_File, when working through each section. I had not been familiar with the function XOR, by reviewing the resource of https://www.programmingalgorithms.com/algorithm/xor-encryption/cpp. I began to understand the structure necessary for the XOR function to work in the code given for this assignment. By adding (^ key[i % keyLen];) this allowed the encryption to use a key at each value for “password”, (const std::string key = "password"). I then followed sources to read the inputextfile, I struggled to access the file even though in code it stated to return text_file. I later found that for the file to be viewed it needed to be embedded into the project folder created in Microsoft Visual Studio source/repo/project_name. This corrected the issue, and the last step was to add code to save the file for encryption and decryption to take place.
-
+``
 /* =============== Include ============== /*
 
 #include <cassert>	// Evaluate assertion
@@ -58,3 +58,4 @@ void save_data_file(const std::string& filename, const std::string& student_name
 	//std::cout << source_string;
   
 // The program should Read File: inputdatafile.txt - Encrypted To: encrypteddatafile.txt - Decrypted To: decrytpteddatafile.txt
+``
