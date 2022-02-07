@@ -208,7 +208,6 @@ Please view the FreeRTOSConfig.h header file for example configuration informati
         /* Failed to start timer */
         while (1) {}
     }
-    }
 
 /* ======== gpioButtonFxn0 ======== */
 
