@@ -36,8 +36,9 @@ Specific to Encryption_File, when working through each section. I had not been f
 
 /* ============== Save string to text file =============== */
 
-``void save_data_file(const std::string& filename, const std::string& student_name, const std::string& key, const std::string& data)
-{
+	`` 
+	void save_data_file(const std::string& filename, const std::string& student_name, const std::string& key, const std::string& data)
+	{
 	//  TODO: implement file saving
 	std::ofstream MyWriteFile(filename); // file format from https://www.w3schools.com/cpp/cpp_files.asp
 	//std::myReadFile.open(filename);
@@ -47,7 +48,8 @@ Specific to Encryption_File, when working through each section. I had not been f
 	MyWriteFile << key;  // Line 3: key used
 	MyWriteFile << data; // Line 4+: data
 	MyWriteFile.close(); // close()
-}``
+	}
+	``
   
 // Consider using cout to verify the student name, read_file, and source_String  
 //std::cout << "STUDENT NAME" << student_name;
