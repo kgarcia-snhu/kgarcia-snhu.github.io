@@ -18,9 +18,7 @@ Specific to Encryption_File, when working through each section. I had not been f
 #include <sstream>	// String streams
 #include <ctime>	// Convert time_t value to string
 
-/*
-*  ======== Implement XOR-based encryption ========
-*/
+/*  ======== Implement XOR-based encryption ======== */
 
 /* encrypt or decrypt a source string using the provided key
 *<param name = "source">input string to process< / param>
@@ -31,15 +29,14 @@ Specific to Encryption_File, when working through each section. I had not been f
 // When loading the file ensure the file is embedded within the source file location of the project. Otherwise MVS may not validate that the file exists.
 // test that the file is available using the following commands
   
-  //std::cout << file_text << std::endl; // test file_text output		// use cout to test file output if needed
-	//std::cout << filename << std::endl;  // test filename output
+//std::cout << file_text << std::endl; // test file_text output
+//std::cout << filename << std::endl;  // test filename output
   
 // When saving the file use ofstream MyWriteFile
-  /*
-============== Save string to text file ===============
-*/
 
-void save_data_file(const std::string& filename, const std::string& student_name, const std::string& key, const std::string& data)
+/* ============== Save string to text file =============== */
+
+``void save_data_file(const std::string& filename, const std::string& student_name, const std::string& key, const std::string& data)
 {
 	//  TODO: implement file saving
 	std::ofstream MyWriteFile(filename); // file format from https://www.w3schools.com/cpp/cpp_files.asp
@@ -50,11 +47,11 @@ void save_data_file(const std::string& filename, const std::string& student_name
 	MyWriteFile << key;  // Line 3: key used
 	MyWriteFile << data; // Line 4+: data
 	MyWriteFile.close(); // close()
-}
+}``
   
 // Consider using cout to verify the student name, read_file, and source_String  
-  //std::cout << "STUDENT NAME" << student_name;
-  //std::cout << read_file;
-	//std::cout << source_string;
+//std::cout << "STUDENT NAME" << student_name;
+//std::cout << read_file;
+//std::cout << source_string;
   
 // The program should Read File: inputdatafile.txt - Encrypted To: encrypteddatafile.txt - Decrypted To: decrytpteddatafile.txt
