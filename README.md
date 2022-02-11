@@ -332,19 +332,19 @@ The skills for this artifact demonstrate an ability to use well-founded and inno
 
 #### For example:
 
-**// Part 1**
+***// Part 1***
 From Codio Select Terminal and enter ``mysql;`` // this provides access to the server
 
-**//Part 2**
+***// Part 2***
 ``SHOW DATABASES;`` // perform this action to show a list of all databases
 
-**// Part 3**
+***// Part 3***
 ``CREATE DATABASE Capstone22;`` // perform this action to create a new database, name the database as desired
 
-**//Part 4**
+***// Part 4***
 ``USE Capstone22;``	// perform this action to select the database for CRUD actions
 
-**//Part 5**
+***// Part 5***
 // create Customers table and fields
 
 ``CREATE TABLE Customers (
