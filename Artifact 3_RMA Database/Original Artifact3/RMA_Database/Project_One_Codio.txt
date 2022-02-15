@@ -1,0 +1,174 @@
+// Step One: Create a Database
+// Part 1 Create a database schema called QuantigrationUpdates and list it out to the screen.
+Create Database QuantigrationUpdates;
+Show Databases;
+Use QuantigrationUpdates;
+
+
+// Part 2 Using the ERD as a reference, create the following tables with the appropriate attributes and keys:
+A table named customers to store customer information with a primary key of CustomerID
+A table named orders to store order information with a primary key of OrderID
+A table named rma to store RMA information with a primary key of RMAID
+CREATE TABLE Customers (
+  CustomerID INT,
+  FirstName VARCHAR(25),
+  LastName VARCHAR(25),
+  Street VARCHAR(50),
+  City VARCHAR(50),
+  State VARCHAR(25),
+  ZipCode INT,
+  Telephone VARCHAR(15),
+  PRIMARY KEY(CustomerID)
+);
+CREATE TABLE Orders (
+  OrderID INT,
+  CustomerID INT,
+  SKU VARCHAR(20),
+  Description VARCHAR(50),
+  PRIMARY KEY(OrderID)
+);
+CREATE TABLE RMA (
+  Reason VARCHAR(25),
+  RMAID INT,
+  OrderID INT,
+  Status VARCHAR(50),
+  Step VARCHAR(15),
+  PRIMARY KEY(RMAID)
+);
+ALTER TABLE Orders
+  ADD FOREIGN KEY(CustomerID) REFERENCES Customers(CustomerID);
+ALTER TABLE RMA
+  ADD FOREIGN KEY(OrderID) REFERENCES Orders(OrderID);
+SHOW TABLES;
+DESC Customer;
+DESC Order;
+DESC RMA;
+
+
+// Step Two
+// Part 1 Import the data from each file into tables. 
+Use the QuantigrationUpdates database, the three tables you created, and the three CSV files preloaded into Codio.
+Use the import utility of your database program to load the data from each file into the table of the same name. You will perform this step three times, once for each table. 
+mkdir output
+sudo chown mysql:mysql output
+
+LOAD DATA INFILE '/home/codio/workspace/customers.csv' 
+  INTO TABLE Customers 
+  FIELDS TERMINATED BY ',' 
+  ENCLOSED BY '"'
+  LINES TERMINATED BY '\n';
+
+LOAD DATA INFILE '/home/codio/workspace/orders.csv' 
+  INTO TABLE Orders 
+  FIELDS TERMINATED BY ',' 
+  ENCLOSED BY '"'
+  LINES TERMINATED BY '\n';
+
+LOAD DATA INFILE '/home/codio/workspace/rma.csv' 
+  INTO TABLE RMA 
+  FIELDS TERMINATED BY ',' 
+  ENCLOSED BY '"'
+  LINES TERMINATED BY '\n';
+
+
+// Part 2 Write basic queries against imported tables to organize and analyze targeted data
+Write an SQL query that returns the count of orders for customers located only in the city of Framingham, Massachusetts.
+How many records were returned? 
+SELECT COUNT(*)
+  FROM Customers INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+  WHERE UPPER(Customers.city) = "FRAMINGHAM" AND UPPER(Customers.state) =    'MASSACHUSETTS';
+SELECT Orders.OrderID, Orders.CustomerID, Orders.SKU, LEFT(Orders.Description, 28), Customers.City, Customers.State
+  FROM Customers INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+  WHERE UPPER(Customers.city) = "FRAMINGHAM" AND UPPER(Customers.state) = 'MASSACHUSETTS'
+  Limit 4;
+  
+  
+// Part 2.i Write an SQL query to select all of the customers located in the state of Massachusetts.
+SELECT COUNT(*)
+  FROM Customers INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+  WHERE UPPER(Customers.state) =    'MASSACHUSETTS';
+SELECT * 
+  FROM Customers INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+  WHERE UPPER(Customers.state) = 'MASSACHUSETTS'
+  ORDER BY Orders.CustomerID ASC
+  Limit 10;
+
+
+
+// Part 2.ii Write a SQL query to insert four new records into the orders and customers tables using the following data
+INSERT INTO Customers (CustomerID, FirstName, LastName, Street, City, State, ZipCode, Telephone)
+  VALUES
+  (100004, 'Luke', 'Skywalker', '15 Maiden Lane', 'New York', 'NY', 10222, '212-555-1234'),
+  (100005, 'Winston', 'Smith', '123 Sycamore Street', 'Greensboro', 'NC', 27401, '919-555-6623'),
+  (100006, 'MaryAnne', 'Jenkins', '1 Coconut Way', 'Jupiter', 'FL', 33458, '321-555-8907'),
+  (100007, 'Janet', 'Williams', '55 Redondo Beach Blvd', 'Torrence', 'CA', 90501, '310-555-5678');
+
+
+// Part 2.iii Write a SQL query to insert four new records into the orders and customers tables using the following data
+INSERT INTO Orders (OrderID, CustomerID, SKU, Description)
+  VALUES
+  (1204305, 100004, 'ADV-24-10C', 'Advanced Switch 10GigE Copper 24 port'),
+  (1204306, 100005, 'ADV-48-10F', 'Advanced Switch 10 GigE Copper/Fiber 44 port copper 4 port fiber'),
+  (1204307, 100006, 'ENT-24-10F', 'Enterprise Switch 10GigE SFP+ 24 Port'),
+  (1204308, 100007, 'ENT-48-10F', 'Enterprise Switch 10GigE SFP+ 48 port');
+
+
+// Part 2.iv In the customers table, perform a query to count all records where the city is Woonsocket, Massachusetts. (RhodeIsland)
+SELECT * 
+  FROM Customers INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+  WHERE UPPER(Customers.city) = "Woonsocket"
+  ORDER BY Orders.CustomerID ASC;
+SELECT COUNT(*)
+  FROM Customers INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+  WHERE UPPER(Customers.city) = "Woonsocket";
+
+
+//Part v Write an SQL statement to select the current fields of status and step for the record in the rma table with an orderid value of “5175"
+SELECT RMA.Status, Step
+  FROM RMA
+  WHERE OrderID = "5175";
+
+
+// Part 2.vi Write an SQL statement to update the status and step for the orderid, 5175 to status = “Complete” and step = “Credit Customer Account”
+UPDATE RMA
+  SET Status = "Complete", Step = "Credit Customer Account"
+  WHERE OrderID = "5175";
+SELECT RMA.Status, Step
+  FROM RMA
+  WHERE OrderID = "5175";
+
+
+// Part 2.vii Write an SQL statement to delete all records with a reason of “Rejected”
+SELECT RMA.RMAID, RMA.OrderID, LEFT(RMA.Reason, 28), RMA.Status, RMA.Step
+  FROM RMA
+  WHERE UPPER(RMA.Step) LIKE '%Rejected%'
+ORDER BY RMA.RMAID;
+
+SELECT *
+  FROM RMA
+  WHERE UPPER(RMA.Step) LIKE '%Rejected%'
+ORDER BY RMA.RMAID;
+
+SELECT COUNT(*)
+  FROM RMA
+  WHERE UPPER(RMA.Step) LIKE '%Rejected%'
+ORDER BY RMA.RMAID;
+
+SELECT RMA.RMAID AS RMAID, RMA.OrderID AS ORDERID, LEFT(RMA.Reason, 28) AS REASON, RMA.Status AS STATUS, RMA.Step AS STEP
+  FROM RMA
+  ORDER BY RMA.Step DESC
+  INTO OUTFILE'/home/codio/workspace/output/RMA_Format.csv' FIELDS TERMINATED BY ',';
+
+
+// Part 2.viii Create an output file of the required query results. Write an SQL statement to list the contents of the orders table and send the output to a file that has a .csv extension
+SELECT Orders.OrderID AS ORDERID, Orders.CustomerID AS CUSTOMERID, Orders.SKU AS SKU, Orders.Description AS DESC, RMA.RMAID AS RMAID, RMA.OrderID AS RMAOID, RMA.Reason AS REASON, RMA.Step AS STEP
+FROM Orders INNER JOIN RMA ON Orders.OrderID = RMA.OrderID
+  WHERE Orders.OrderID >= 0
+  ORDER BY Orders.OrderID ASC
+  INTO OUTFILE'/home/codio/workspace/output/Orders_ProjectOne.csv' FIELDS TERMINATED BY ',';
+
+SELECT Orders.OrderID AS ORDERID, Orders.CustomerID AS CUSTOMERID, Orders.SKU AS SKU, LEFT(Orders.Description, 28) AS DESCRIPTION, RMA.RMAID AS RMAID, RMA.OrderID AS RMAOID, LEFT(RMA.Reason, 28) AS REASON, RMA.Step AS STEP
+  FROM Orders INNER JOIN RMA ON Orders.OrderID = RMA.OrderID
+  WHERE Orders.OrderID >= 0
+  ORDER BY Orders.OrderID ASC
+  INTO OUTFILE'/home/codio/workspace/output/Orders_ProjectOne.csv' FIELDS TERMINATED BY ',';

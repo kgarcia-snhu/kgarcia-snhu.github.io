@@ -1,0 +1,99 @@
+3938,Massachusetts
+
+2055,Alaska
+
+2038,Arkansas
+
+2032,West Virginia
+
+2029,Alabama
+
+2027,Oregon
+
+2014,Idaho
+
+2012,Mississippi
+
+2012,Connecticut
+
+2011,Iowa
+
+2004,New Mexico
+
+2002,Tennessee
+
+1998,Indiana
+
+1998,Delaware
+
+1997,Wisconsin
+
+1995,Montana
+
+1993,Pennsylvania
+
+1990,South Dakota
+
+1990,Kentucky
+
+1990,Vermont
+
+1983,Louisiana
+
+1982,Minnesota
+
+1979,Hawaii
+
+1975,Wyoming
+
+1969,Washington
+
+1966,Missouri
+
+1965,New York
+
+1960,North Dakota
+
+1960,Arizona
+
+1959,Rhode Island
+
+1957,North Carolina
+
+1948,Maryland
+
+1945,Florida
+
+1945,New Hampshire
+
+1945,California
+
+1945,Utah
+
+1942,Oklahoma
+
+1939,Texas
+
+1938,Nevada
+
+1936,Maine
+
+1935,Illinois
+
+1934,Michigan
+
+1923,Kansas
+
+1920,Ohio
+
+1915,Nebraska
+
+1911,Georgia
+
+1903,New Jersey
+
+1891,South Carolina
+
+0,\N
+
+
