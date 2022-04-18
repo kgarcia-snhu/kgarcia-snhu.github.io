@@ -1,4 +1,4 @@
-# kgarcia-snhu.github.io
+# software-engineering.github.io
 
 ## Southern New Hampshire University Software Engineering ePortfolio
 
