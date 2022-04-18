@@ -1,4 +1,4 @@
-# Southern New Hampshire University Software Engineering ePortfolio
+## Southern New Hampshire University Software Engineering ePortfolio
 
 ## CS499 Computer Science Capstone
 My name is Keone, best pronounced as (Ke Own E). I maintained the Honors President's List at Southern New Hampshire University of a 3.7 GPA or higher. I am a first-generation dual major, studying computer science and data analytics. Both of which have concentrations in software engineering and project management. The projects associated with this page are part of the Computer Science program from Southern New Hampshire University. The ePortfolio contains a narrated code review, enhancements to completed work in three categories (Software Design and Engineering, Algorithms and Data Structure, and Databases), justification narratives, and a professional self-assessment. These artifacts have been developed previously in my years at SNHU and have been further developed to expand the complexity of software and functionality to showcase my abilities. 
